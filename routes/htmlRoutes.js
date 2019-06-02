@@ -2,7 +2,7 @@ var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
 const Op = Sequelize.Op;
 
-const { Post, User } = db;
+const { Post } = db;
 
 module.exports = (app) => {
   // Load index page to main handlebar;
@@ -16,6 +16,11 @@ module.exports = (app) => {
     console.log("Fulfilling request to load login page");
     res.render("login")
   });
+  // Render the create new user page;
+  // ========================================
+  app.get("/newuser", (req, res) => {
+    res.render("newuser");
+  })
   // Handling the login request with the local strategy;
   // The login form is submitted to the server via the POST method from the "login" handlebar;
   // ========================================
@@ -26,7 +31,8 @@ module.exports = (app) => {
       failureFlash: 'Invalid username or password.'
     })
   );
-  // User logout 
+  // User logout
+  // ========================================
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");

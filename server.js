@@ -34,8 +34,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Serialize and deserialize user instances to and from the session (optional);
-passport.serializeUser( (user, done) => {
-  done(null, user.id);
+passport.serializeUser( (User, done) => {
+  done(null, User.id);
 });
 
 passport.deserializeUser( (id, done) =>{
