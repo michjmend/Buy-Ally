@@ -9,9 +9,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     User.associate = (models) => {
-        // This will add the attribute UserId to Burger;
-        // Instances of User will get the accessors getPurchases and setPurchases;
-        User.hasMany(models.Burger, {as: 'Purchases', foreignKey: 'purchases_id'}, );
+        User.hasMany(models.Post);
     };
 
     return User;

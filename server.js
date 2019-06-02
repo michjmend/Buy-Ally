@@ -7,7 +7,7 @@ var session = require("express-session");
 
 var db = require("./models");
 
-// Passport strategy
+// Passport strategy;
 passport.use(new LocalStrategy(
   (username, password, done) => {
     User.findOne({ username: username }, (err, user) => {
@@ -15,7 +15,7 @@ passport.use(new LocalStrategy(
       if (!user) {
         return done(null, false, { message: "Incorrect username." });
       }
-      if (!user.validPassword(pasword)) {
+      if (!user.validPassword(password)) {
         return done(null, false, { message: "Incorrect password." });
       }
       return done(null, user);
@@ -26,12 +26,23 @@ passport.use(new LocalStrategy(
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Middleware
+// Middleware;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Serialize and deserialize user instances to and from the session (optional);
+passport.serializeUser( (user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser( (id, done) =>{
+  User.findById(id, (err, user) => {
+    done(err, user);
+  });
+});
 
 
 // Handlebars
@@ -56,8 +67,8 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function () {
-  app.listen(PORT, function () {
+db.sequelize.sync(syncOptions).then( () => {
+  app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,

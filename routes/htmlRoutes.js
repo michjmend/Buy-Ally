@@ -4,22 +4,30 @@ const Op = Sequelize.Op;
 
 const { Post, User } = db;
 
-module.exports = function (app) {
+module.exports = (app) => {
+    // Load index page to main handlebar;
+  // ========================================
+  app.get("/", (req, res) => {
+    res.render("index");
+  });
+  // Render the login page;
+  // ========================================
+  app.get("/login", (req, res) => {
+    res.render("login")
+  });
+  // Handling the login request with the local strategy;
+  // The login form is submitted to the server via the POST method from the "login" handlebar;
+  // ========================================
   app.post('/login',
     passport.authenticate('local', {
       successRedirect: '/',
       failureRedirect: '/login',
       failureFlash: 'Invalid username or password.'
-    }
-    )
+    })
   );
-
-  // Load index page
-  app.get("/index", function (req, res) {
-    res.render("index");
-  });
-
-  app.get("/api/products", function (req, res) {
+  // Find all ORM to select all Posts from our DB;
+  // ========================================
+  app.get("/api/products", (req, res) => {
     Post.findAll({
       where: {
         category: req.body.category,
@@ -28,13 +36,14 @@ module.exports = function (app) {
         },
         brand: req.body.brand
       }
-    }).then(function (dbPosts) {
+    }).then((dbPosts) => {
       res.render("view1", {
         Posts: dbPosts
       });
     });
   });
-
+  // Create ORM for create new instance of our Post model;
+  // ========================================
   app.post("/api/products", (req, res) => {
     Post.create({
       name: req.body.name,
@@ -49,8 +58,8 @@ module.exports = function (app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
+  app.get("/example/:id", (req, res) => {
+    db.Example.findOne({ where: { id: req.params.id } }).then((dbExample) => {
       res.render("example", {
         example: dbExample
       });
@@ -58,7 +67,7 @@ module.exports = function (app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", (req, res) => {
     res.render("404");
   });
 };
