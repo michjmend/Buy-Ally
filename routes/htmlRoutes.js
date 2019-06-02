@@ -5,7 +5,7 @@ const Op = Sequelize.Op;
 const { Post, User } = db;
 
 module.exports = (app) => {
-    // Load index page to main handlebar;
+  // Load index page to main handlebar;
   // ========================================
   app.get("/", (req, res) => {
     res.render("index");
@@ -13,6 +13,7 @@ module.exports = (app) => {
   // Render the login page;
   // ========================================
   app.get("/login", (req, res) => {
+    console.log("Fulfilling request to load login page");
     res.render("login")
   });
   // Handling the login request with the local strategy;
@@ -25,9 +26,15 @@ module.exports = (app) => {
       failureFlash: 'Invalid username or password.'
     })
   );
+  // User logout 
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  })
   // Find all ORM to select all Posts from our DB;
   // ========================================
   app.get("/api/products", (req, res) => {
+    console.log("/api/products GET route is being hit");
     Post.findAll({
       where: {
         category: req.body.category,
@@ -37,6 +44,7 @@ module.exports = (app) => {
         brand: req.body.brand
       }
     }).then((dbPosts) => {
+      console.log("Successfully retrieved data from database");
       res.render("view1", {
         Posts: dbPosts
       });
@@ -45,6 +53,7 @@ module.exports = (app) => {
   // Create ORM for create new instance of our Post model;
   // ========================================
   app.post("/api/products", (req, res) => {
+    console.log("/api/products POST route is being hit");
     Post.create({
       name: req.body.name,
       review: req.body.review,
@@ -53,6 +62,7 @@ module.exports = (app) => {
       url: req.body.url,
       brand: req.body.brand
     }).then((post) => {
+      console.log("Successfully created new row in Post table", post);
       res.render("view2", { post: post })
     });
   });
