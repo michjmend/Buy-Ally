@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     like: {
-      type: DataString.FLOAT(10,2),
+      type: DataTypes.BOOLEAN,
       allowNull: false
     }
 
