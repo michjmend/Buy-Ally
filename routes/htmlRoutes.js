@@ -2,16 +2,25 @@ var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
 const Op = Sequelize.Op;
 
+const { Post, User } = db;
+
 module.exports = function (app) {
+  app.post('/login',
+    passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: 'Invalid username or password.'
+    }
+    )
+  );
 
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/index", function (req, res) {
     res.render("index");
   });
 
-  // FindAll products where column values match the users filter options;
-  app.get("/products/api", function (req, res) {
-    db.Product.findAll({
+  app.get("/api/products", function (req, res) {
+    Post.findAll({
       where: {
         category: req.body.category,
         price: {
@@ -19,9 +28,31 @@ module.exports = function (app) {
         },
         brand: req.body.brand
       }
-    }).then(function (dbProducts) {
+    }).then(function (dbPosts) {
       res.render("view1", {
-        products: dbProducts
+        Posts: dbPosts
+      });
+    });
+  });
+
+  app.post("/api/products", (req, res) => {
+    Post.create({
+      name: req.body.name,
+      review: req.body.review,
+      price: req.body.price,
+      category: req.body.category,
+      url: req.body.url,
+      brand: req.body.brand
+    }).then((post) => {
+      res.render("view2", { post: post })
+    });
+  });
+
+  // Load example page and pass in an example by id
+  app.get("/example/:id", function (req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
+      res.render("example", {
+        example: dbExample
       });
     });
   });
