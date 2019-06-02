@@ -26,11 +26,18 @@ module.exports = (app) => {
   // ========================================
   app.post('/login',
     passport.authenticate('local', {
-      successRedirect: '/',
-      failureRedirect: '/login',
-      failureFlash: 'Invalid username or password.'
+      successRedirect: "/users/" + req.user.username,
+      failureRedirect: "/login",
+      failureFlash: "Invalid username or password",
+      successFlash: "Welcome!"
     })
   );
+  // Routing user to their user page after a successful login attempt;
+  // ========================================
+    app.get("/users/:username", (req, res) => {
+      res.render("userpage");
+    });
+
   // User logout
   // ========================================
   app.get("/logout", (req, res) => {

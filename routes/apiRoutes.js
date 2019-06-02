@@ -12,9 +12,11 @@ module.exports = function(app) {
       password: req.body.password
     }).then( (dbUser) => {
       console.log("Created a new User into the User table", dbUser.dataValues.username);
-      res.status(200).end();
+      return res.redirect('/users/' + dbUser.dataValues.username);
     })
-  })
+  });
+
+
 
 
   // Get all examples
@@ -28,7 +30,7 @@ module.exports = function(app) {
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
       res.json(dbExample);
-    });
+    }); 
   });
 
   // Delete an example by id

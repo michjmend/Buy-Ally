@@ -5,6 +5,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         password: {
             type: DataTypes.STRING
+        },
+        authorized: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         }
     });
 
