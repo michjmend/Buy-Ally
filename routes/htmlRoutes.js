@@ -20,7 +20,7 @@ module.exports = (app) => {
   // ========================================
   app.get("/newuser", (req, res) => {
     res.render("newuser");
-  })
+  });
   // Handling the login request with the local strategy;
   // The login form is submitted to the server via the POST method from the "login" handlebar;
   // ========================================
