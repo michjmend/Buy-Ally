@@ -1,13 +1,13 @@
 var db = require("../models");
 
-const { Post } = db;
+const { User } = db;
 
 module.exports = function(app) {
   // POST route for creating a new User into our database;
   // ========================================
   app.post("/api/newuser", (req, res) => {
     console.log("POST route to create a new User instance is hit");
-    Post.create({
+    User.create({
       username: req.body.username,
       password: req.body.password
     }).then( (dbUser) => {
@@ -15,9 +15,6 @@ module.exports = function(app) {
       return res.redirect('/users/' + dbUser.dataValues.username);
     })
   });
-
-
-
 
   // Get all examples
   app.get("/api/examples", function(req, res) {
