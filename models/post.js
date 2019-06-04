@@ -12,23 +12,41 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     price: {
-      type: DataString.FLOAT(7,2),
+      type: DataTypes.FLOAT(10,2),
       allowNull: false
     },
-    category: {
-      type: DataTypes.STRING
+    picture: {
+      type: DataTypes.BLOB
     },
     url: {
-      type: DataTypes.STRING
-    },
-    brand: {
       type: DataTypes.STRING
     }
   });
 
-  Post.associate = (models) => {
-    Post.belongsTo(models.User);
+  Product.associate = (models) => {
+    Product.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    Product.belongsTo(models.Category, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    Product.belongsTo(models.Brand, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    Category.hasMany(models.comments, {
+      onDelete: "cascade"
+    });
+
   };
-  
+
   return Post;
 };
