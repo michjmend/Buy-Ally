@@ -1,7 +1,7 @@
 var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
 const Op = Sequelize.Op;
-
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 const { Post } = db;
 
 module.exports = (app) => {
@@ -26,9 +26,11 @@ module.exports = (app) => {
   });
   // Routing user to their user page after a successful login attempt;
   // ========================================
-    app.get("/users/:username", (req, res) => {
-      res.render("userpage");
-    });
+  app.get("/users/:username", isAuthenticated, function(req, res) {
+    res.render("userProfile");
+  });
+
+
   // Find all ORM to select all Posts from our DB;
   // ========================================
   app.get("/api/products", (req, res) => {
