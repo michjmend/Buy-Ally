@@ -1,48 +1,26 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var passport = require("passport");
-var LocalStrategy = require("passport-local").Strategy;
 var session = require("express-session");
+var passport = require("./config/passport");
 
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
-// Passport strategy;
-passport.use(new LocalStrategy(
-  (username, password, done) => {
-    User.findOne({ username: username }, (err, user) => {
-      if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: "Incorrect username." });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: "Incorrect password." });
-      }
-      return done(null, user);
-    });
-  }
-))
+// We need to use sessions to keep track of our user's login status
 
 var app = express();
-var PORT = process.env.PORT || 3000;
 
-// Middleware;
+// Creating express app and configuring middleware needed for authentication
+var app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Serialize and deserialize user instances to and from the session (optional);
-passport.serializeUser( (User, done) => {
-  done(null, User.id);
-});
-
-passport.deserializeUser( (id, done) =>{
-  User.findById(id, (err, user) => {
-    done(err, user);
-  });
-});
 
 
 // Handlebars
