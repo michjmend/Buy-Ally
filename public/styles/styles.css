@@ -1,3 +1,62 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.form-inline{
+  position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    color:#007876;
+}
+
+#searchBtn{
+  background-color:#0078765f;
+  color: white;
+  
+}
+
+#postBtn{
+  background-color:#f088638e;
+  color: white;
+}
+
+.btn{
+  width: 347px;
+  color: #007876;
+}
+
+.navbar-brand{
+  font-family: 'Architects Daughter', cursive;
+  font-size: 35px;
+
+}
+
+.navbar{
+  height:75px;
+  background-color:#bfbbba;
+}
+
+.signin{
+  padding:5px;
+  margin-right:20px;
+
+}
+#signInBtn{
+  color:#007876;
+  min-height: 40px;
+  border-radius: 4px;
+  min-width: 40px;
+  font-size: 30px;
+}
+
+#creatIdBtn{
+  color:#f08963;
+  min-height: 40px;
+  border-radius: 4px;
+  min-width: 40px;
+  font-size: 30px;
+}
+
+#buyAllybrand{
+  font-size:40px;
+}
