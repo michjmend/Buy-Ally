@@ -23,26 +23,26 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Product.associate = (models) => {
+  Post.associate = (models) => {
     Product.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
 
-    Product.belongsTo(models.Category, {
+    Post.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false
       }
     });
 
-    Product.belongsTo(models.Brand, {
+    Post.belongsTo(models.Brand, {
       foreignKey: {
         allowNull: false
       }
     });
 
-    Category.hasMany(models.comments, {
+    Post.hasMany(models.comments, {
       onDelete: "cascade"
     });
 
