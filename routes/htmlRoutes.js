@@ -14,36 +14,21 @@ module.exports = (app) => {
   // ========================================
   app.get("/login", (req, res) => {
     console.log("Fulfilling request to load login page");
-    res.render("login")
+    if (req.user) {
+      res.render("/users/:username")
+    };
+    res.redner("login")
   });
   // Render the create new user page;
   // ========================================
   app.get("/newuser", (req, res) => {
     res.render("newuser");
   });
-  // Handling the login request with the local strategy;
-  // The login form is submitted to the server via the POST method from the "login" handlebar;
-  // ========================================
-  app.post('/login',
-    passport.authenticate('local', {
-      successRedirect: "/users/" + req.user.username,
-      failureRedirect: "/login",
-      failureFlash: "Invalid username or password",
-      successFlash: "Welcome!"
-    })
-  );
   // Routing user to their user page after a successful login attempt;
   // ========================================
     app.get("/users/:username", (req, res) => {
       res.render("userpage");
     });
-
-  // User logout
-  // ========================================
-  app.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
-  })
   // Find all ORM to select all Posts from our DB;
   // ========================================
   app.get("/api/products", (req, res) => {
