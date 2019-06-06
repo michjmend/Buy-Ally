@@ -9,10 +9,14 @@
     color:#007876;
 }
 
+#content {
+  margin-top: 80px;
+}
+
 #searchBtn{
   background-color:#0078765f;
   color: white;
-  
+
 }
 
 #postBtn{
