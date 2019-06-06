@@ -1,14 +1,8 @@
 {
   "development": {
-<<<<<<< HEAD
-    "username": "root",
-    "password": null,
-    "database": "project_two_db",
-=======
     "username": "androosk",
     "password": "1234",
     "database": "buyallyDB",
->>>>>>> 5e314664b72ed6c2c7205dab0034b788aa3004c8
     "host": "localhost",
     "dialect": "mysql"
   },

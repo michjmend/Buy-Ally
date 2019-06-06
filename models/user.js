@@ -11,7 +11,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-<<<<<<< HEAD
     User.associate = function(models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
@@ -19,15 +18,6 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
-=======
-  //   User.associate = function(models) {
-  //   // Associating Author with Posts
-  //   // When an Author is deleted, also delete any associated Posts
-  //   User.hasMany(models.Product, {
-  //     onDelete: "cascade"
-  //   });
-  // };
->>>>>>> 5e314664b72ed6c2c7205dab0034b788aa3004c8
 
   return User;
 };
