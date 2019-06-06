@@ -1,13 +1,20 @@
+body{
+  background-image  :url(../img/gradientBackground2.png);
+  /* width:960px; */
+  height:auto;
+  margin:auto;
+
+}
 .list-group-item {
   line-height: 2.5;
 }
-
+/*
 .form-inline{
   position: absolute;
     left: 50%;
     transform: translatex(-50%);
     color:#007876;
-}
+} */
 
 #content {
   margin-top: 80px;
@@ -20,7 +27,7 @@
 }
 
 #postBtn{
-  background-color:#f088638e;
+  background-color:#f08863;
   color: white;
 }
 
@@ -36,16 +43,17 @@
 }
 
 .navbar{
-  height:75px;
-  background-color:#bfbbba;
+  height:110px;
+  background-color:#006296;
 }
 
-.signin{
+.sign-in{
   padding:5px;
   margin-right:20px;
+  color:#f08863
 
 }
-#signInBtn{
+/* #signInBtn{
   color:#007876;
   min-height: 40px;
   border-radius: 4px;
@@ -59,8 +67,137 @@
   border-radius: 4px;
   min-width: 40px;
   font-size: 30px;
-}
+} */
 
 #buyAllybrand{
   font-size:40px;
+}
+
+.footer{
+  background-color:#006296;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|Raleway:400,300,700);
+@font-face {
+  font-family: 'codropsicons';
+  src: url('../fonts/codropsicons/codropsicons.eot');
+  src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+  url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+  url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.form-inline>header,
+.codrops-top {
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+.form-inline>header {
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+  color: #fcfaf7;
+}
+
+.form-inline>header h1 {
+  font-size: 2.625em;
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 300;
+}
+
+.form-inline>header span {
+  display: block;
+  font-size: 60%;
+  color: #fcfaf7;
+  padding: 0 0 0.6em 0.1em;
+}
+
+.color-9 {background-color:;
+  background:#006296 ;
+}
+/* Effect 9: second text and borders */
+.cl-effect-9 a {
+	margin: 0 20px;
+  /* padding: 18px 20px; */
+  float: left;
+}
+
+.cl-effect-9 a::before,
+.cl-effect-9 a::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	content: '';
+  opacity: 0.2;
+  text-align:center;
+	-webkit-transition: opacity 0.3s, height 0.3s;
+	-moz-transition: opacity 0.3s, height 0.3s;
+	transition: opacity 0.3s, height 0.3s;
+}
+
+.cl-effect-9 a::after {
+	top: 100%;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.cl-effect-9 a span:first-child {
+	z-index: 2;
+	display: block;
+	font-weight: 300;
+}
+
+.cl-effect-9 a span:last-child {
+	z-index: 1;
+	display: block;
+	padding: 8px 0 0 0;
+	color: rgba(255, 253, 253, 0.461);
+	text-shadow: none;
+	text-transform: none;
+	font-style: italic;
+	font-size: 0.75em;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+.cl-effect-9 a:hover::before,
+.cl-effect-9 a:focus::before {
+	height: 6px;
+}
+
+.cl-effect-9 a:hover::before,
+.cl-effect-9 a:hover::after,
+.cl-effect-9 a:focus::before,
+.cl-effect-9 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+  transform: translateY(0px);
+  text-decoration: overline
+}
+
+.cl-effect-9 a:hover span:last-child,
+.cl-effect-9 a:focus span:last-child {
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+  transform: translateY(0%);
+  text-decoration: overline
 }
