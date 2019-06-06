@@ -1,6 +1,6 @@
 var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
-const Sequelize = require('sequelize')
+const Sequelize = require("sequelize")
 const Op = Sequelize.Op;
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 const { Post } = db;
@@ -18,12 +18,12 @@ module.exports = (app) => {
     if (req.user) {
       res.render("/users/:username")
     };
-    res.redner("login")
+    res.render("login")
   });
   // Render the create new user page;
   // ========================================
-  app.get("/newuser", (req, res) => {
-    res.render("newuser");
+  app.get("/signup", (req, res) => {
+    res.render("signup");
   });
   // Routing user to their user page after a successful login attempt;
   // ========================================
