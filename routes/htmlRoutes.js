@@ -1,5 +1,6 @@
 var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
+const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 const { Post } = db;

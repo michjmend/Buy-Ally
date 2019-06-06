@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Post.associate = (models) => {
-    Product.belongsTo(models.User, {
+    Post.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
@@ -42,7 +42,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     });
 
-    Post.hasMany(models.comments, {
+    Post.hasMany(models.Comments, {
       onDelete: "cascade"
     });
 
