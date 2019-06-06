@@ -1,46 +1,173 @@
 <div id="home">
-  <div class="container">
+  <header class="fixed-top">
+    <!-- Image and text -->
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">
+        <img id="buyAllybrand" src="../public/img/BuyAlly.png" width="60" height="60"
+          class="buyAllyBrand-inline-block align-top" alt="">
+        Buy Ally
+      </a>
+
+      <form class="form-inline">
+        <div class="form-group">
+          <button id="searchBtn" class="btn" type="button">Search</button>
+          <button id="postBtn" class="btn" type="button">Post</button>
+        </div>
+      </form>
+
+      <form class="signin">
+        <button id="signInBtn" type="button"><i class="fas fa-sign-in-alt"></i></button>
+        <button id="creatIdBtn" type="button"><i class="fas fa-user-plus"></i></button>
+      </form>
+    </nav>
+  </header>
+
+{{!-- middle content --}}
+  <div id="content" class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>Buy Ally</h2>
-        <h4>Shop. Find. Share.</h4>
-        <h4>Use Buy Ally to post and review any product! For every product you review, you get a coupon! Have fun <i class="fas fa-smile-wink"></i></h4>
-        <form class="was-validated clearfix mb-4" action="POST">
-          {{!-- Search box --}}
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Search</span>
-            </div>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
-          </div>
-          {{!-- user product input --}}
-          <div class="mb-3">
-            <label for="validationTextarea">What project do you want to post a review about?</label>
-            <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Enter product here" required></textarea>
-            <div class="invalid-feedback">
-              Please enter a message in the textarea.
-            </div>
-          </div>
-          {{!-- select which departmen --}}
-          <div class="form-group">
-            <select class="custom-select" required>
-              <option value="">Which department?</option>
-              <option value="1">Men's</option>
-              <option value="2">Women's</option>
-              <option value="3">Children</option>
-            </select>
-            <div class="invalid-feedback">Must select an option</div>
-          </div>
-          {{!-- optional photo upload --}}
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-            <div class="invalid-feedback">Must select an upload</div>
-          </div>
-          {{!-- submit button for posting --}}
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
+      <div class="col-md-3">
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+        <div class="form-check">
+          <p>
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h1 class="display-1 text-right">Buy Ally</h1>
+        <h3 class="text-right">Shop. Find. Share.</h3>
+        <h5>Use Buy Ally to post and review any product! For every product you review, you get a coupon! Have fun <i
+            class="fas fa-smile-wink"></i></h5>
+
+<h2>Posts</h2>
+
+<ul>
+  {{#each post}}
+    {{#unless newpost}}
+      {{> post/post-block newpost=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Search</h2>
+
+<ul>
+  {{#each search}}
+    {{#if newsearch}}
+      {{> search/search-block newsearch=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+        <!-- carousel -->
+        <div class="my-flipster">
+          <ul>
+            <li>
+              <p> Posts about Stuff Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi iusto asperiores
+                odit, veritatis, error porro minus neque eius doloremque tempore alias totam autem eligendi ad fugit
+                molestiae rem nisi quam vel rerum corrupti reiciendis quia? Deserunt beatae modi saepe deleniti
+                reprehenderit assumenda dolorum, doloribus amet eos eligendi esse natus. Ratione nesciunt delectus
+                saepe. Facere fugit, maxime aspernatur odio dolore officia voluptates quo quia explicabo nesciunt
+                perferendis expedita, voluptate quidem. Aliquid quisquam cupiditate nisi? Distinctio non repellat
+                adipisci dolorem provident doloremque iste dignissimos quaerat error ipsam nemo, officia est vero harum
+                maxime cupiditate obcaecati quasi dolorum itaque soluta. Corporis, error similique.</p>
+            </li>
+            <li>
+              <p>Posts about stuff. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe eveniet at in
+                numquam. Corporis soluta magnam quos aperiam. Earum ratione non facere veniam aliquid distinctio a harum
+                ipsum laboriosam optio.</p>
+            </li>
+            <li>
+              <p> Posts about Stuff Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi iusto asperiores
+                odit, veritatis, error porro minus neque eius doloremque tempore alias totam autem eligendi ad fugit
+                molestiae rem nisi quam vel rerum corrupti reiciendis quia? Deserunt beatae modi saepe deleniti
+                reprehenderit assumenda dolorum, doloribus amet eos eligendi esse natus. Ratione nesciunt delectus
+                saepe. Facere fugit, maxime aspernatur odio dolore officia voluptates quo quia explicabo nesciunt
+                perferendis expedita, voluptate quidem. Aliquid quisquam cupiditate nisi? Distinctio non repellat
+                adipisci dolorem provident doloremque iste dignissimos quaerat error ipsam nemo, officia est vero harum
+                maxime cupiditate obcaecati quasi dolorum itaque soluta. Corporis, error similique.</p>
+            </li>
+            <li>
+              <p>Posts about stuff. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe eveniet at in
+                numquam. Corporis soluta magnam quos aperiam. Earum ratione non facere veniam aliquid distinctio a harum
+                ipsum laboriosam optio.</p>
+            </li>
+            <li>
+              <p> Posts about Stuff Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi iusto asperiores
+                odit, veritatis, error porro minus neque eius doloremque tempore alias totam autem eligendi ad fugit
+                molestiae rem nisi quam vel rerum corrupti reiciendis quia? Deserunt beatae modi saepe deleniti
+                reprehenderit assumenda dolorum, doloribus amet eos eligendi esse natus. Ratione nesciunt delectus
+                saepe. Facere fugit, maxime aspernatur odio dolore officia voluptates quo quia explicabo nesciunt
+                perferendis expedita, voluptate quidem. Aliquid quisquam cupiditate nisi? Distinctio non repellat
+                adipisci dolorem provident doloremque iste dignissimos quaerat error ipsam nemo, officia est vero harum
+                maxime cupiditate obcaecati quasi dolorum itaque soluta. Corporis, error similique.</p>
+            </li>
+            <li>
+              <p>Posts about stuff. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe eveniet at in
+                numquam. Corporis soluta magnam quos aperiam. Earum ratione non facere veniam aliquid distinctio a harum
+                ipsum laboriosam optio.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
         {{!-- <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">Shop. Find. Share.</label>
@@ -55,16 +182,23 @@
         <h3>Examples:</h3>
         <ul id="example-list" class="list-group">
           {{#each examples}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <a href="example/{{this.id}}">{{this.text}}</a>
-              <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
           {{/each}}
         </ul>
       </div>
     </div>
   </div>
 </div>
+
+  <footer class="fixed-bottom navbar navbar-light">
+    <div class="text-center">
+      <h3>Copyright &copy;</h3>
+    </div>
+  </footer>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
