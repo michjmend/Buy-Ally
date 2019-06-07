@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var Comments = sequelize.define("Comments", {
     comment: {
       type: DataTypes.TEXT,
@@ -11,10 +11,9 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false
     }
-
   });
 
-  Comments.associate = (models) => {
+  Comments.associate = models => {
     Comments.belongsTo(models.Post, {
       foreignKey: {
         allowNull: false
@@ -23,4 +22,4 @@ module.exports = function (sequelize, DataTypes) {
   };
 
   return Comments;
-}
+};

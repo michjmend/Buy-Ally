@@ -1,11 +1,11 @@
 var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
-const Sequelize = require("sequelize")
+const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 const { Post } = db;
 
-module.exports = (app) => {
+module.exports = app => {
   // Load index page to main handlebar;
   // ========================================
   app.get("/", (req, res) => {
@@ -16,9 +16,9 @@ module.exports = (app) => {
   app.get("/login", (req, res) => {
     console.log("Fulfilling request to load login page");
     if (req.user) {
-      res.render("/users/:username")
-    };
-    res.render("login")
+      res.render("/users/:username");
+    }
+    res.render("login");
   });
   // Render the create new user page;
   // ========================================
@@ -30,7 +30,6 @@ module.exports = (app) => {
   app.get("/users/:username", isAuthenticated, function(req, res) {
     res.render("userProfile");
   });
-
 
   // Find all ORM to select all Posts from our DB;
   // ========================================
@@ -44,7 +43,7 @@ module.exports = (app) => {
         },
         brand: req.body.brand
       }
-    }).then((dbPosts) => {
+    }).then(dbPosts => {
       console.log("Successfully retrieved data from database");
       res.render("view1", {
         Posts: dbPosts
@@ -62,15 +61,15 @@ module.exports = (app) => {
       category: req.body.category,
       url: req.body.url,
       brand: req.body.brand
-    }).then((post) => {
+    }).then(post => {
       console.log("Successfully created new row in Post table", post);
-      res.render("view2", { post: post })
+      res.render("view2", { post: post });
     });
   });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", (req, res) => {
-    db.Example.findOne({ where: { id: req.params.id } }).then((dbExample) => {
+    db.Example.findOne({ where: { id: req.params.id } }).then(dbExample => {
       res.render("example", {
         example: dbExample
       });
