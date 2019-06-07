@@ -95,23 +95,21 @@
 
 <h2>Posts</h2>
 
-<ul>
-  {{#each post}}
+
+
     {{#unless newpost}}
       {{> post/post-block newpost=true}}
     {{/unless}}
-  {{/each}}
-</ul>
+
+
 
 <h2>Search</h2>
 
-<ul>
-  {{#each search}}
+
     {{#if newsearch}}
       {{> search/search-block newsearch=true}}
     {{/if}}
-  {{/each}}
-</ul>
+
 
         <!-- carousel -->
         <div class="my-flipster">

@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "androosk",
-    "password": "1234",
+    "username": "root",
+    "password": "123",
     "database": "buyallyDB",
     "host": "localhost",
     "dialect": "mysql"
