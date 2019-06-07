@@ -31,26 +31,27 @@ module.exports = (app) => {
     res.render("userProfile");
   });
 
+  app.get("/api/search", (req, res) => {
+    Post.findAll({
+
+    })
+  })
 
   // Find all ORM to select all Posts from our DB;
   // ========================================
-  app.get("/api/products", (req, res) => {
+  app.get("/", (req, res) => {
     console.log("/api/products GET route is being hit");
     Post.findAll({
-      where: {
-        category: req.body.category,
-        price: {
-          [Op.between]: [req.body.price]
-        },
-        brand: req.body.brand
-      }
     }).then((dbPosts) => {
+      var recentPosts = dbPosts.slice(-5)
       console.log("Successfully retrieved data from database");
-      res.render("view1", {
-        Posts: dbPosts
+      res.render("index", {
+        Posts: recentPosts 
       });
     });
   });
+
+
   // Create ORM for create new instance of our Post model;
   // ========================================
   app.post("/api/products", (req, res) => {
