@@ -1,10 +1,10 @@
 {
   "name": "project_two",
   "version": "1.0.0",
-  "description": "",
+  "description": "Must use a Node and Express Web Server Must be backed by a MySQL Database with a Sequelize ORM Michelle Mendieta Kristen De La Rosa Andrew Tirpok Sushmita Yande Michael Kang",
   "main": "server.js",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "express": "^4.17.0",
@@ -34,5 +34,16 @@
     "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michjmend/PROJECT2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michjmend/PROJECT2/issues"
+  },
+  "homepage": "https://github.com/michjmend/PROJECT2#readme"
 }

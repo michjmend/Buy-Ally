@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Brand = sequelize.define("Brand", {
-    // Giving the Author model a name of type STRING
+
     brandname: DataTypes.STRING(50)
   });
 
