@@ -10,21 +10,28 @@
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.1",
-    "inquirer": "^6.3.1",
-    "msql": "^1.0.3",
     "mysql": "^2.17.1",
     "node-geocoder": "^3.22.0",
-    "node-spotify-api": "^1.1.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7",
-    "sequelize": "^5.8.7"
-  },
-  "devDependencies": {
+    "sequelize": "^5.8.7",
     "mysql2": "^1.6.5"
   },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.13.7"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
   },
   "author": "",
   "license": "ISC"
