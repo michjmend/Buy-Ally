@@ -1,8 +1,15 @@
 <li>
 	{{search}}
+	<form>
+            <div class="form-group search">
+              <label for="formGroupExampleInput"></label>
+              <input type="text" class="form-control" id="search" placeholder="Search">
+            </div>
+  </form>
 
 	<button class="" data-id="{{id}}" data-newsearch="{{newsearch}}">
 		{{#if example}}...{{else}}...{{/if}}
+
 	</button>
 
 	<button class="delete-search" data-id="{{this.id}}">...</button>
