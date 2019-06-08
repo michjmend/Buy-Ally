@@ -6,7 +6,7 @@ const { User } = db;
 module.exports = app => {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     console.log("successful login!!!");
-    res.json("/accountpage");
+    res.json("/");
   });
 
   app.get("/accountpage", (req, res) => {
