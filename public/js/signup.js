@@ -28,14 +28,17 @@ $(document).ready(function() {
       username: username,
       password: password
     })
-      .then(function(data) {
-        window.location.replace(data);
-        // If there's an error, handle it by throwing up a bootstrap alert
+      .then(function(location) {
+        console.log(location);
+        console.log("trying to reload the page to /login");
+        window.location.replace(location);
+        // location.replace(location);
       })
       .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
+    console.log(err);
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }

@@ -47,7 +47,7 @@
 
   </header>
 
-{{!-- middle content --}}
+  {{!-- middle content --}}
   <div id="content" class="container">
     <div class="row">
       <div class="col-md-3">
@@ -128,7 +128,9 @@
 
 
 
-<h2>Search</h2>
+        {{#unless newsearch}}
+        {{> post/post-block newpost=true}}
+        {{/unless}}
 
 
     {{!-- {{#if newsearch}} --}}
@@ -142,7 +144,7 @@
     </div>
   </div>
 
-        {{!-- <form class="clearfix mb-4" action="POST">
+  {{!-- <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">Shop. Find. Share.</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
@@ -153,18 +155,18 @@
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form> --}}
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
+  <h3>Examples:</h3>
+  <ul id="example-list" class="list-group">
+    {{#each examples}}
+    <li data-id="{{this.id}}" class="list-group-item">
+      <a href="example/{{this.id}}">{{this.text}}</a>
+      <button class="btn btn-danger float-right delete">ｘ</button>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+</div>
+</div>
 </div>
 
   <footer class="navbar navbar-light">
