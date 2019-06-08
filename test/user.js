@@ -17,7 +17,7 @@ describe("GET /api/examples", () => {
     return db.sequelize.sync({ force: true });
   });
 
-  it("should find all examples", done => {
+  it("should find all users", done => {
     // Add some examples to the db to test with
     db.User.bulkCreate([
       { username: "First", password: "product1" },
