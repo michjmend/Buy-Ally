@@ -1,11 +1,17 @@
-<li>
-	{{search}}
 
-	<button class="" data-id="{{id}}" data-newsearch="{{newsearch}}">
-		{{#if example}}...{{else}}...{{/if}}
-	</button>
+			<div id="scroller">
+				<div class="carousel-nav">
+						<a class="prev">&laquo;</a>
+						<a class="next">&raquo;</a>
+				</div>
+				{{#each Posts}}
+					<a class="item" href="{{this.review}}"><img src="{{this.imageURL}}"/></a>
+      	{{/each}}
 
-	<button class="delete-search" data-id="{{this.id}}">...</button>
-</li>
+				{{!-- <% parsedData.forEach((movie)=>{ %>
+					<!-- <div class="col-md-3 col-sm-4 poster"> -->
+						<a class="item" href="/movie/<%= movie.id %>"><img src="<%= imageBaseUrl + movie.poster_path %>"/></a>
+					<!-- </div> -->
+				<% })%> --}}
+			</div>
 
-{{!-- still working on getting these partials in --}}

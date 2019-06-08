@@ -1,1 +1,7 @@
-INSERT INTO
+USE buyallyDB;
+
+INSERT INTO `buyallydb`.`users` (`id`, `username`, `password`, `createdAt`, `updatedAt`) VALUES ('1', 'Sam', 'sam123', '06/07/19', '06/07/19'),('2', 'Monali', 'mn999', '06/07/19', '06/07/19'),('3', 'Ankita', 'ankita', '06/08/19', '06/08/19'),('4', 'Dan', '1111', '06/08/19', '06/08/19');
+
+INSERT INTO `buyallydb`.`categories` (`categoryname`, `createdAt`, `updatedAt`) VALUES ('Sports', '06/07/19', '06/07/19'),('Outdoor', '06/07/19', '06/07/19'),('Casual', '06/07/19', '06/07/19'),('Formal', '06/08/19', '06/08/19'),('Semiformal', '06/08/19', '06/08/19'),('Festive', '06/08/19', '06/08/19'),('Business Formal', '06/08/19', '06/08/19'),('Business Formal', '06/08/19', '06/08/19'),('Accessories', '06/08/19', '06/08/19');
+
+INSERT INTO `buyallydb`.`posts` (`id`, `name`, `review`, `price`, `brand`, `url`, `createdAt`, `updatedAt`, `CategoryId`, `UserId`) VALUES ('1', 'NEWTON SUIT', 'I like this suit. Very good Quality', '399', 'xxx', 'https://www.indochino.com/product/newton-blue-suit?currency=USD&utm_source=google&utm_medium=cpc&utm_campaign=768964681&gclid=CjwKEAjwue3nBRCCyrqY0c7bw2wSJACSlmGZjPDn2y1TzenQqcOEFxU_1gePWyAnJpmocm-UcIvishoCTMXw_wcB', '06/07/19', '06/07/19', '3', '2'),('2', 'ASSORTED BRACELETS', 'These are some I love. Found a great website for my new collection.', '100', 'BVLGARI', 'https://www.bulgari.com/en-us/287811.html?gclid=CjwKEAjwue3nBRCCyrqY0c7bw2wSJACSlmGZwIYtSfvgVDVRziRjFS91t_DzEEzcnL4vPAl1GPapKRoCOsDw_wcB&gclsrc=aw.ds', '06/08/19', '06/08/19', '9', '3');
