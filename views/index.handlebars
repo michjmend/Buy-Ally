@@ -2,9 +2,8 @@
   <header class="fixed-top">
     <!-- Image and text -->
     <nav class="navbar">
-        <a class="navbar-brand" href="#">
-        <img id="buyAllybrand" src="../public/img/BuyAllyLogo.png"
-        width="220" height="90">
+      <a class="navbar-brand" href="#">
+        <img id="buyAllybrand" src="/img/BuyAllyLogo.png" width="220" height="90">
 
       </a>
 
@@ -118,24 +117,20 @@
         <h5>Use Buy Ally to post and review any product! For every product you review, you get a coupon! Have fun <i
             class="fas fa-smile-wink"></i></h5>
 
-{{!-- <h2>Posts</h2>
+        {{!-- <h2>Posts</h2>
 
 
 
-    {{!-- {{#unless newpost}} --}}
-      {{!-- {{> /post-block newpost=true}} --}}
-    {{!-- {{/unless}} --}}
+    {{!-- {{#unless display}} --}}
+        {{!-- {{> /post-block}} --}}
+        {{!-- {{/unless}} --}}
 
 
-
-        {{#unless newsearch}}
-        {{> post/post-block newpost=true}}
-        {{/unless}}
-
-
-    {{!-- {{#if newsearch}} --}}
-      {{> search/search-block newsearch=true}}
-    {{/if}} --}}
+        {{#if display}}
+          {{> searchBlock post=Posts}}
+        {{#else display}}
+          {{> postBlock}}
+        {{/if}}
 
 
 
@@ -169,11 +164,11 @@
 </div>
 </div>
 
-  <footer class="navbar navbar-light">
-    <div class="text-center">
-      <h3>Copyright &copy;</h3>
-    </div>
-  </footer>
+<footer class="navbar navbar-light">
+  <div class="text-center">
+    <h3>Copyright &copy;</h3>
+  </div>
+</footer>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -7,10 +7,7 @@ const { Post } = db;
 
 module.exports = app => {
   // Load index page to main handlebar;
-  // ========================================
-  app.get("/", (req, res) => {
-    res.render("index");
-  });
+  // =======================================
   // Render the login page;
   // ========================================
   app.get("/login", (req, res) => {
@@ -31,6 +28,10 @@ module.exports = app => {
     res.render("userProfile");
   });
 
+  app.get("/post", (req, res) => {
+    res.render("index");
+  });
+
   // Find all ORM to select all Posts from our DB;
   // ========================================
   app.get("/", (req, res) => {
@@ -39,6 +40,7 @@ module.exports = app => {
       var recentPosts = dbPosts.slice(-5);
       console.log("Successfully retrieved data from database");
       res.render("index", {
+        display: true,
         Posts: recentPosts
       });
     });

@@ -1,12 +1,4 @@
 body{
-<<<<<<< HEAD
-  background-image  :url(../img/gradientBackground2.png);
-  /* width:960px; */
-  height:auto;
-  margin:auto;
-
-}
-=======
   /* background-image  :url(../img/gradientBackground2.png); */
   background-image  :url(../img/artem-beliaikin-belart84-622295-unsplash.jpg);
 /*
@@ -24,7 +16,6 @@ body{
   margin-top: 0;
 }
 
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
 .list-group-item {
   line-height: 2.5;
 }
@@ -35,8 +26,6 @@ body{
     transform: translatex(-50%);
     color:#007876;
 } */
-<<<<<<< HEAD
-=======
 
 
 /* The sidebar menu */
@@ -52,7 +41,6 @@ body{
   padding-top: 20px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
 
 /* The sidebar links */
 .sidebar a {
@@ -78,14 +66,10 @@ body{
   margin-left: 50px;
 }
 
-<<<<<<< HEAD
-#postBtn{
-=======
 /* The button used to open the sidebar */
 .openbtn {
   font-size: 20px;
   cursor: pointer;
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
   background-color:#f08863;
   color: white;
   padding: 10px 15px;
@@ -146,13 +130,8 @@ body{
 }
 
 .sign-in{
-<<<<<<< HEAD
-  padding:5px;
-  margin-right:20px;
-=======
   padding:0px;
   margin-right:0;
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
   color:#f08863
 
 }
@@ -199,11 +178,7 @@ body{
 
 .form-inline>header {
   margin: 0 auto;
-<<<<<<< HEAD
-  padding: 2em;
-=======
   /* padding: 2em; */
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
   text-align: center;
   color: #fcfaf7;
 }
@@ -222,33 +197,19 @@ body{
   padding: 0 0 0.6em 0.1em;
 }
 
-<<<<<<< HEAD
-.color-9 {background-color:;
-  background:#006296 ;
-}
-=======
 /* .color-9 {background-color:;
   background:#006296 ;
 } */
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
 /* Effect 9: second text and borders */
 .cl-effect-9 a {
 	margin: 0 20px;
   /* padding: 18px 20px; */
   float: left;
-<<<<<<< HEAD
-=======
-
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
 }
 
 .cl-effect-9 a::before,
 .cl-effect-9 a::after {
-<<<<<<< HEAD
-	position: absolute;
-=======
 	position: relative;
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -322,8 +283,6 @@ body{
   transform: translateY(0%);
   text-decoration: overline
 }
-<<<<<<< HEAD
-=======
 
 /* search button */
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);
@@ -405,4 +364,3 @@ button:hover span::before, button:hover span::after{
 .btn-6:hover span::before, .btn-6:hover span::after{
   top: 0;
 }
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
