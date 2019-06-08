@@ -7,8 +7,10 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "androosk",
-    "password": "1234",
+
+    "username": "root",
+    "password": "SYindia1GO!",
+
     "database": "buyallyDB",
     "host": "localhost",
     "dialect": "mysql",
