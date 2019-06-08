@@ -11,16 +11,6 @@
   height: auto;
   opacity: 0.6;
 }
-  body{
-  /* background-image  :url(../img/gradientBackground2.png); */
-  background-image  :url(../img/artem-beliaikin-belart84-622295-unsplash.jpg);
-/*
-  /* width:960px; */
-  /* height:1px;
-  margin:10px; */
-  background-size:2000px;
-  /* color: rgba(128, 128, 128, 0.742); */
-}
 
 .search{
   margin-right: 500px;

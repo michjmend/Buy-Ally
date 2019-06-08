@@ -73,7 +73,7 @@ module.exports = app => {
   });
 
   // Route for post.html
-  app.get(/* what ever route you want */, function(res, req) {
+  app.get("", function(res, req) {
 
     // use category.js (sequelize) to pull all the data
     // data = { casual, formal, men, women, children}
