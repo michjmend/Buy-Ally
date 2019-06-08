@@ -11,12 +11,15 @@ module.exports = function(sequelize, DataTypes) {
         min: 0
       }
     },
+    picture: {
+      type: DataTypes.BLOB
+    },
     price: {
       type: DataTypes.FLOAT(10, 2),
       allowNull: false
     },
-    picture: {
-      type: DataTypes.BLOB
+    brand: {
+      type: DataTypes.STRING
     },
     url: {
       type: DataTypes.STRING
@@ -36,11 +39,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
 
-    Post.belongsTo(models.Brand, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
 
     Post.hasMany(models.Comments, {
       onDelete: "cascade"
