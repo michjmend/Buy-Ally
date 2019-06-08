@@ -127,13 +127,10 @@
 
 
         {{#if display}}
-          {{> searchBlock post=Posts}}
-        {{#else display}}
+          {{> displayBlock post=Posts}}
+        {{else}}
           {{> postBlock}}
         {{/if}}
-
-
-
 
       </div>
     </div>
