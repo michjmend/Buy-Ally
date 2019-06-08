@@ -28,7 +28,7 @@ $(document).ready(function() {
       username: username,
       password: password
     })
-      .then(function(location) {
+      .then(location => {
         console.log(location);
         console.log("trying to reload the page to /login");
         window.location.replace(location);
@@ -50,17 +50,17 @@ $(document).ready(function() {
   var length = document.getElementById("length");
 
   // When the user clicks on the password field, show the message box
-  myInput.onfocus = function() {
+  myInput.onfocus = () => {
     document.getElementById("message").style.display = "block";
   };
 
   // When the user clicks outside of the password field, hide the message box
-  myInput.onblur = function() {
+  myInput.onblur = () => {
     document.getElementById("message").style.display = "none";
   };
 
   // When the user starts to type something inside the password field
-  myInput.onkeyup = function() {
+  myInput.onkeyup = () => {
     // Validate lowercase letters
     var lowerCaseLetters = /[a-z]/g;
     if (myInput.value.match(lowerCaseLetters)) {

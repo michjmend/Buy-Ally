@@ -7,10 +7,7 @@ const { Post } = db;
 
 module.exports = app => {
   // Load index page to main handlebar;
-  // ========================================
-  app.get("/", (req, res) => {
-    res.render("index");
-  });
+  // =======================================
   // Render the login page;
   // ========================================
   app.get("/login", (req, res) => {
@@ -27,8 +24,12 @@ module.exports = app => {
   });
   // Routing user to their user page after a successful login attempt;
   // ========================================
-  app.get("/userProfile", isAuthenticated, function(req, res) {
+  app.get("/userProfile", isAuthenticated, (req, res) => {
     res.render("userProfile");
+  });
+
+  app.get("/post", (req, res) => {
+    res.render("index");
   });
 
   // Find all ORM to select all Posts from our DB;
@@ -39,6 +40,7 @@ module.exports = app => {
       var recentPosts = dbPosts.slice(-5);
       console.log("Successfully retrieved data from database");
       res.render("index", {
+        display: true,
         Posts: recentPosts
       });
     });
@@ -71,14 +73,4 @@ module.exports = app => {
   app.get("*", (req, res) => {
     res.render("404");
   });
-
-  // Route for post.html
-  app.get("", function(res, req) {
-
-    // use category.js (sequelize) to pull all the data
-    // data = { casual, formal, men, women, children}
-    res.render("post-block", data)
-
-
-  })
 };

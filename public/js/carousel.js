@@ -17,7 +17,7 @@ function assignPositions() {
       itemPositions[i] = "right-hidden";
     }
   }
-  $("#scroller .item").each(function(index) {
+  $("#scroller .item").each(index => {
     $(this).addClass(itemPositions[index]);
   });
 }
@@ -31,7 +31,7 @@ function scroll(direction) {
   }
   $("#scroller .item")
     .removeClass("left-hidden left middle right right-hidden")
-    .each(function(index) {
+    .each(index => {
       $(this).addClass(itemPositions[index]);
     });
 }

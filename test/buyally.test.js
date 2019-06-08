@@ -9,24 +9,24 @@ chai.use(chaiHttp);
 
 var request;
 
-describe("GET /api/comments", function() {
+describe("GET /api/comments", () => {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
-  beforeEach(function() {
+  beforeEach(() => {
     request = chai.request(server);
     return db.sequelize.sync({ force: true });
   });
 
-  it("should find all examples", function(done) {
+  it("should find all examples", done => {
     // Add some examples to the db to test with
     db.comments
       .bulkCreate([
         { text: "First Example", description: "First Description" },
         { text: "Second Example", description: "Second Description" }
       ])
-      .then(function() {
+      .then(() => {
         // Request the route that returns all examples
-        request.get("/api/comments").end(function(err, res) {
+        request.get("/api/comments").end((err, res) => {
           var responseStatus = res.status;
           var responseBody = res.body;
 

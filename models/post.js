@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   var Post = sequelize.define("Post", {
     name: {
       type: DataTypes.STRING,

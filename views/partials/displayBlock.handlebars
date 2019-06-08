@@ -1,0 +1,9 @@
+<div id="scroller">
+	<div class="carousel-nav">
+		<a class="prev">&laquo;</a>
+		<a class="next">&raquo;</a>
+	</div>
+	{{#each posts}}
+	<a class="item" href="{{this.review}}"><img src="{{this.imageURL}}" /></a>
+	{{/each}}
+</div>
