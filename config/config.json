@@ -1,32 +1,15 @@
 {
   "development": {
-<<<<<<< HEAD
     "username": "root",
-<<<<<<< HEAD
-    "password": "123",
-=======
-    "password": "Thanos23",
-=======
-    "username": "androosk",
-    "password": "1234",
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
->>>>>>> 0aeb7a17bdac919511539e02e1e4454a01d02fd7
+    "password": "",
     "database": "buyallyDB",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-<<<<<<< HEAD
     "username": "root",
-    "password": "Thanos23",
+    "password": "",
     "database": "testDB",
-=======
-
-    "username": "root",
-    "password": "SYindia1GO!",
-
-    "database": "buyallyDB",
->>>>>>> 213d887159fce0ee0ea23585f921da9f09b78187
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
