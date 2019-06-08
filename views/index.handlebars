@@ -11,13 +11,13 @@
       <form class="form-inline">
         <div class="form-group">
           <button id="searchBtn" class="btn" type="button">Search</button>
-          <button id="postBtn" class="btn" type="button">Post</button>
+          <a href="/login"><button id="postBtn" class="btn" type="button">Post</button></a>
         </div>
       </form>
 
       <form class="signin">
-        <button id="signInBtn" type="button"><i class="fas fa-sign-in-alt"></i></button>
-        <button id="creatIdBtn" type="button"><i class="fas fa-user-plus"></i></button>
+        <a href="/login"><button id="signInBtn" type="button"><i class="fas fa-sign-in-alt"></i></button></a> 
+        <a href="/signup"><button id="creatIdBtn" type="button"><i class="fas fa-user-plus"></i></button></a>
       </form>
     </nav>
   </header>
@@ -93,7 +93,7 @@
         <h5>Use Buy Ally to post and review any product! For every product you review, you get a coupon! Have fun <i
             class="fas fa-smile-wink"></i></h5>
 
-        <h2>Posts</h2>
+        {{!-- <h2>Posts</h2>
 
 
         {{#unless newsearch}}
@@ -105,7 +105,7 @@
 
         {{#if newsearch}}
         {{> search/search-block newsearch=true}}
-        {{/if}}
+        {{/if}} --}}
 
         <!-- carousel -->
         <div class="my-flipster">

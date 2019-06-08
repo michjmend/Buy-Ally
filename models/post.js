@@ -1,8 +1,8 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     review: {
       type: DataTypes.TEXT,
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     price: {
-      type: DataTypes.FLOAT(10,2),
+      type: DataTypes.FLOAT(10, 2),
       allowNull: false
     },
     picture: {
@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Post.associate = (models) => {
+  Post.associate = models => {
     Post.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
@@ -45,7 +45,6 @@ module.exports = function (sequelize, DataTypes) {
     Post.hasMany(models.Comments, {
       onDelete: "cascade"
     });
-
   };
 
   return Post;
