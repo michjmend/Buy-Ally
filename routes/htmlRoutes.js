@@ -33,7 +33,7 @@ module.exports = app => {
 
   // Find all ORM to select all Posts from our DB;
   // ========================================
-  app.get("/api/products", (req, res) => {
+  app.get("/", (req, res) => {
     console.log("/api/products GET route is being hit");
     Post.findAll({
       where: {
