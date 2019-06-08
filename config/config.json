@@ -8,8 +8,9 @@
   },
   "test": {
     "username": "root",
-    "password": "null!",
     "database": "buyallyDB",
+    "password": "",
+    "database": "testDB",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
