@@ -1,12 +1,64 @@
-<li>
-	{{post}}
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">POST</h5> --}}
+    <h3>Add a POST</h3>
 
-	<button class="" data-id="{{id}}" data-newpost="{{newpost}}">
-		{{#if example}}...{{else}}...{{/if}}
-	</button>
+    <form class="create-update-form" action="/" method="POST">
 
-	<button class="delete-post" data-id="{{this.id}}">...</button>
-</li>
+        <div class="form-group">
 
+            <label for="dab">Name :</label>
+            <input type="text" id="dab" name="name">
 
-{{!-- still working on getting these partials in --}}
+            <label for="dab1">Review :</label>
+            <input type="text" id="dab1" name="review">
+
+            <label for="dab2">Price :</label>
+            <input type="text" id="dab2" name="price">
+
+            <label for="dab3">Picture :</label>
+            <input type="text" id="dab3" name="picture">
+
+            <label for="dab4">URL :</label>
+            <input type="text" id="dab4" name="url">
+
+					<select name="Category" id="Category" class="form-control input-lg">
+						   <option value="">Select Category :</option>
+					</select>
+					<br/>
+					<select name="Brand" id="Brand" class="form-control input-lg">
+						   <option value="">Select Brand :</option>
+					</select>
+					<br/>
+
+            <button class="btn btn-warning" type="submit">Add Burger</button>
+						<a href="/">← Back To Home</a>
+
+        </div>
+
+			</form>
+
+        {{!-- </div>
+      </div>
+    </div>
+  </div>
+</div> --}}
+
+<script>
+	$(document).ready(function(){
+		function load_json_data(id){
+			var cat_code='';
+			$.getJSON(Category.json, function(data){
+					cat_code += '<option value="">Select '+id+'</option>';
+					$.each(data, function(key, value){
+							cat_code +='<option value="">Select ' + id + '> ' + value.categoryname + '</option>';
+					});
+			$('#Category').html(cat_code);
+
+			});
+		}
+	});
+</script>
