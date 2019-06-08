@@ -11,6 +11,16 @@
   height: auto;
   opacity: 0.6;
 }
+  body{
+  /* background-image  :url(../img/gradientBackground2.png); */
+  background-image  :url(../img/artem-beliaikin-belart84-622295-unsplash.jpg);
+/*
+  /* width:960px; */
+  /* height:1px;
+  margin:10px; */
+  background-size:2000px;
+  /* color: rgba(128, 128, 128, 0.742); */
+}
 
 .search{
   margin-right: 500px;
@@ -19,7 +29,6 @@
   min-height: 20px;
   margin-top: 0;
 }
-
 .list-group-item {
   line-height: 2.5;
 }
@@ -209,7 +218,6 @@
 	margin: 0 20px;
   /* padding: 18px 20px; */
   float: left;
-
 }
 
 .cl-effect-9 a::before,

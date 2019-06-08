@@ -3,10 +3,20 @@ var passport = require("../config/passport");
 
 const { User } = db;
 
-module.exports = function(app) {
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.redirect("/users/:username");
+module.exports = app => {
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    console.log("successful login!!!");
+    res.json("/");
   });
+
+  // app.post(
+  //   "/api/login",
+  //   passport.authenticate("local", {
+  //     successRedirect: "/",
+  //     failureRedirect: "/signup"
+  //   })
+  // );
+
   // POST route for creating a new User into our database;
   // ========================================
   app.post("/api/signup", (req, res) => {
@@ -15,8 +25,10 @@ module.exports = function(app) {
       username: req.body.username,
       password: req.body.password
     })
-      .then(() => {
-        res.redirect(307, "/api/login");
+      .then(dbUser => {
+        console.log(dbUser);
+        console.log("trying to redirect to the /login page");
+        res.json("/login");
       })
       .catch(err => {
         console.log(err);

@@ -28,11 +28,13 @@ $(document).ready(function() {
       username: username,
       password: password
     })
-      .then(function(data) {
-        window.location.replace(data);
+      .then(route => {
+        console.log("testing reload");
+        window.location.replace(route);
+        console.log(route);
         // If there's an error, log the error
       })
-      .catch(function(err) {
+      .catch(err => {
         console.log(err);
       });
   }
