@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "mm050891",
+    "password": "SYindia1GO!",
     "database": "buyallyDB",
     "host": "localhost",
     "dialect": "mysql"
@@ -9,7 +9,7 @@
   "test": {
     "username": "root",
     "database": "buyallyDB",
-    "password": "",
+    "password": "SYindia1GO!",
     "database": "testDB",
     "host": "localhost",
     "dialect": "mysql",
