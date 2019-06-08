@@ -1,16 +1,9 @@
-
-			<div id="scroller">
-				<div class="carousel-nav">
-						<a class="prev">&laquo;</a>
-						<a class="next">&raquo;</a>
-				</div>
-				{{#each Posts}}
-					<a class="item" href="{{this.review}}"><img src="{{this.imageURL}}"/></a>
-      	{{/each}}
-
-				{{!-- <% parsedData.forEach((movie)=>{ %>
-					<!-- <div class="col-md-3 col-sm-4 poster"> -->
-						<a class="item" href="/movie/<%= movie.id %>"><img src="<%= imageBaseUrl + movie.poster_path %>"/></a>
-					<!-- </div> -->
-				<% })%> --}}
-			</div>
+<div id="scroller">
+	<div class="carousel-nav">
+		<a class="prev">&laquo;</a>
+		<a class="next">&raquo;</a>
+	</div>
+	{{#each posts}}
+	<a class="item" href="{{this.review}}"><img src="{{this.imageURL}}" /></a>
+	{{/each}}
+</div>

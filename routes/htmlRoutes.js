@@ -24,7 +24,7 @@ module.exports = app => {
   });
   // Routing user to their user page after a successful login attempt;
   // ========================================
-  app.get("/userProfile", isAuthenticated, function(req, res) {
+  app.get("/userProfile", isAuthenticated, (req, res) => {
     res.render("userProfile");
   });
 

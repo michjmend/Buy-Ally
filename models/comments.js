@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   var Comments = sequelize.define("Comments", {
     comment: {
       type: DataTypes.TEXT,
