@@ -1,13 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "mm050891",
     "database": "buyallyDB",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+    "database": "buyallyDB",
     "password": "",
     "database": "testDB",
     "host": "localhost",

@@ -71,4 +71,14 @@ module.exports = app => {
   app.get("*", (req, res) => {
     res.render("404");
   });
+
+  // Route for post.html
+  app.get(/* what ever route you want */, function(res, req) {
+
+    // use category.js (sequelize) to pull all the data
+    // data = { casual, formal, men, women, children}
+    res.render("post-block", data)
+
+
+  })
 };
