@@ -6,7 +6,11 @@
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="container">
-          <h3>Filter it up!</h3>
+          <div class="row">
+          <a href="/postBlock"><i class="fas fa-file-import fa-2x"></i></a>
+          <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a>
+        </div>
+          <h3><i class="fas fa-tasks"></i> Filter it up!</h3>
           <div class="form-check">
             <p>
               <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -68,30 +72,23 @@
             </p>
           </div>
         </div>
-        <!-- <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a> -->
       </div>
-
       <div id="main">
         <button class="openbtn" onclick="openNav()">&#9776;</button>
       </div>
-
-
+      {{!-- logo and app icon --}}
       <a class="navbar-brand" href="#">
         <img id="buyAllybrand" src="../img/BuyAllyLogo.png" width="220" height="90">
-
       </a>
-
+      {{!-- search bar --}}
       <form>
         <div class="form-group search">
           <label for="formGroupExampleInput"></label>
           <input type="text" class="form-control" id="search" placeholder="Search">
         </div>
       </form>
+      {{!-- animation --}}
       <div class="container">
-
         <button class="btn-6"><span>
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 192 192" style=" fill:#000000;">
               <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -110,10 +107,11 @@
             </svg>
           </span></button>
       </div>
-
+      {{!-- register --}}
       <form class="form-inline">
         <section class="color-9">
           <nav class="cl-effect-9">
+            {{!-- create new account icon --}}
             <a href="/signup"><span><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 192 192"
                   style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -128,8 +126,8 @@
                     </g>
                   </g>
                 </svg>
-
               </span><span>Create Account</span></a>
+            {{!-- sign-in icon --}}
             <a href="/login"><span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
                   viewBox="0 0 192 192" style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -147,113 +145,24 @@
               </span><span>Sign In</span></a>
           </nav>
         </section>
-        <!-- <div class="form-group">
-
-          <button id="searchBtn" class="btn" type="button">Search</button>
-          <button id="postBtn" class="btn" type="button">Post</button>
-        </div> -->
       </form>
-
-      <!-- <form class="signin"> -->
-      <!-- <button id="signInBtn" type="button"><i class="fas fa-sign-in-alt"></i></button>
-        <button id="creatIdBtn" type="button"><i class="fas fa-user-plus"></i></button> -->
       </form>
     </nav>
   </header>
 
-  {{!-- middle content --}}
+  {{!-- middle content with carousel and post button --}}
   <div id="content" class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-        <div class="form-check">
-          <p>
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-          </p>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <h1 class="display-1 text-right">Buy Ally</h1>
-        <h3 class="text-right">Shop. Find. Share.</h3>
-        <h5>Use Buy Ally to post and review any product! For every product you review, you get a coupon! Have fun <i
-            class="fas fa-smile-wink"></i></h5>
-
-        <!-- carousel -->
-        {{#if display}}
-        {{> searchBlock post=Posts}}
-        {{else}}
-        {{> postBlock}}
-        {{/if}}
-
-      </div>
-    </div>
+    <!-- carousel -->
+    {{#if display}}
+    {{> displayBlock post=Posts}}
+    {{else}}
+    {{> postBlock}}
+    {{/if}}
   </div>
 
-  {{!-- <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Shop. Find. Share.</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Use Buy Ally to post and review any product! For every product you review, you get a coupon! Have fun <i class="fas fa-smile-wink"></i></label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form> --}}
+  {{!-- post button --}}
+  <a class="btn btn-primary" href="/postBlock" role="button">POST</a>
+
   <h3>Examples:</h3>
   <ul id="example-list" class="list-group">
     {{#each examples}}
@@ -263,29 +172,28 @@
     </li>
     {{/each}}
   </ul>
-</div>
-</div>
-</div>
-</div>
 
-<footer class="navbar navbar-light">
-  <div class="text-center">
-    <h3>Copyright &copy;</h3>
-  </div>
-</footer>
-<script>
-  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
+  {{!-- footer --}}
+  <footer class="navbar navbar-light">
+    <div class="text-center">
+      <h3>Copyright &copy;</h3>
+    </div>
+  </footer>
 
-  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  }
-</script>
+  {{!-- javascript --}}
+  <script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/index.js"></script>
