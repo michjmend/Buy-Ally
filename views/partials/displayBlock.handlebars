@@ -1,9 +1,18 @@
-<div id="scroller">
-	<div class="carousel-nav">
-		<a class="prev">&laquo;</a>
-		<a class="next">&raquo;</a>
-	</div>
-	{{#each posts}}
-	<a class="item" href="{{this.review}}"><img src="{{this.imageURL}}" /></a>
+	<div id="scroller">
+      <div class="carousel-nav">
+		    <a class="prev">&laquo;</a>
+		    <a class="next">&raquo;</a>
+	    </div>
+	{{#each Posts}}
+		<a class="item" href="{{this.url}}"><img class="slide-image" src="{{this.picture}}"/>
+		<h3>{{this.name}}</h3><hr>
+		<h3>Brand</h3>
+		<h4>{{this.brand}}</h4><br>
+		<h3>Review</h3>
+		<h4>{{this.review}}</h4><br>
+		<h3>Price</h3>
+		<h4>${{this.price}}</h4>
+		<br><hr>
+		<h4>Click on this post to purchase!</h4>
+		</a>
 	{{/each}}
-</div>

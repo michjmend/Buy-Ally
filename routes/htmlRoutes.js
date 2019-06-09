@@ -37,11 +37,15 @@ module.exports = app => {
   app.get("/", (req, res) => {
     console.log("/api/products GET route is being hit");
     Post.findAll().then(dbPosts => {
-      var recentPosts = dbPosts.slice(-5);
+      let jsonPosts = [];
+      let recentPosts = dbPosts.slice(-5);
       console.log("Successfully retrieved data from database");
+      for (let i = 0; i < recentPosts.length; i++) {
+        jsonPosts.push(recentPosts[i].dataValues);
+      }
       res.render("index", {
         display: true,
-        Posts: recentPosts
+        Posts: jsonPosts
       });
     });
   });
