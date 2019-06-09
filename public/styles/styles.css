@@ -34,6 +34,9 @@
   margin-top: 150px;
 }
 
+div.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
+}
 /* #searchBtn{
   background-color:#0078765f;
   color: white;
@@ -55,7 +58,7 @@
 
 }
 
-.navbar{
+header {
   height:110px;
   background-color:#006296;
 }
@@ -86,8 +89,9 @@
   font-size:40px;
 }
 
-.footer{
+footer {
   background-color:#006296;
+  height: 50px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|Raleway:400,300,700);

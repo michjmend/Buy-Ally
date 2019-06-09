@@ -60,5 +60,10 @@ module.exports = app => {
     });
   });
 
+  app.get("/api/category", function(req, res) {
+    db.Category.findAll({}).then(function(dbcategory) {
+      res.json(dbcategory);
+    });
+  });
   // Delete an example by id
 };

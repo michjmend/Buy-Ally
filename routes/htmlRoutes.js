@@ -32,6 +32,11 @@ module.exports = app => {
     res.render("index");
   });
 
+  // postBlock route for post page
+  app.get("/postblock", (req, res) => {
+    res.render("postblock");
+  });
+
   // Find all ORM to select all Posts from our DB;
   // ========================================
   app.get("/", (req, res) => {
@@ -45,13 +50,15 @@ module.exports = app => {
       });
     });
   });
-
+//should be in apiroutes.js
   app.get("/api/users", (req, res) => {
     console.log("getting all of the users");
     db.User.findAll().then(dbUser => {
       res.json(dbUser);
     });
   });
+
+
   // Create ORM for create new instance of our Post model;
   // ========================================
   // app.post("/api/products", (req, res) => {
