@@ -4,6 +4,10 @@
     max-width: 480px;
 }
 
+#signupbtn {
+    background-color:#f08863;
+}
+
 #message {
     display: none;
     background:transparent;

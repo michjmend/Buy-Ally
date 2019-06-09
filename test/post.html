@@ -284,7 +284,13 @@
       document.getElementById("main").style.marginLeft = "0";
     }
 
-    $(document).ready(function () {
+
+      $(document).ready(function () {
+      $.get("/api/category", function(dbcategory){
+         console.log(dbcategory);
+
+     })
+
       function load_json_data(id) {
         var filter = '';
         $.getJSON(Category.json, function (data) {
