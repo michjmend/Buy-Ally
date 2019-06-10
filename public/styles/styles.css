@@ -1,6 +1,6 @@
- body{
+ /* body{
    max-height:200px;
- }
+ } */
 
 #backgroundImage img {
   padding-top:110px;
@@ -226,7 +226,10 @@ footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+.post-button-container {
+  margin-top: 250px;
+  text-align: center;
+}
 /* .container{
   display: table-cell;
   vertical-align: middle;
@@ -248,14 +251,17 @@ footer {
   display: block;
   padding: 25px 80px;
 } */
-button::before, button::after{
+
+/* THIS SECTION CAUSING WHITE LINE ACROSS SCREEN WHEN HOVERING OVER HAMBURGER */
+/* button::before, button::after{
   content:"";
   width: 0;
   height: 2px;
   position: absolute;
   transition: all 0.2s linear;
   background: #fff;
-}
+} */
+/* END PROBLEM SECTION */
 
 span::before, span::after{
   content:"";
@@ -298,4 +304,10 @@ button:hover span::before, button:hover span::after{
 }
 .btn-6:hover span::before, .btn-6:hover span::after{
   top: 0;
+}
+
+/* ANDREW'S ADDITIONS AND CHANGES */
+.post-button-container {
+  margin-top: 370px;
+  text-align: center;
 }
