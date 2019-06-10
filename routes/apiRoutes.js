@@ -47,8 +47,8 @@ module.exports = app => {
   });
 
   // Get all examples
-  app.get("/api/examples", (req, res) => {
-    db.Example.findAll({}).then(dbExamples => {
+  app.get("/api/posts", (req, res) => {
+    db.Post.findAll({}).then(dbExamples => {
       res.json(dbExamples);
     });
   });

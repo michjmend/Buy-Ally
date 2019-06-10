@@ -17,7 +17,7 @@ function assignPositions() {
       itemPositions[i] = "right-hidden";
     }
   }
-  $("#scroller .item").each(index => {
+  $("#scroller .item").each(function(index) {
     $(this).addClass(itemPositions[index]);
   });
 }
@@ -31,7 +31,7 @@ function scroll(direction) {
   }
   $("#scroller .item")
     .removeClass("left-hidden left middle right right-hidden")
-    .each(index => {
+    .each(function(index) {
       $(this).addClass(itemPositions[index]);
     });
 }
@@ -39,15 +39,14 @@ function scroll(direction) {
 $(document).ready(() => {
   // Run a front end ajax call to get the length of object to iterate over, then call the function to set css classes for each image
 
-  // $.ajax({
-  //   url:
+  $.ajax({
+    url: "api/posts",
+    success: result => {
+      numberOfItems = result.length;
+      assignPositions();
+    }
+  });
 
-  //   success: result => {
-  //     numberOfItems = result.results.length;
-  //     assignPositions();
-  //   }
-  // });
-  assignPositions(); //remove
   let autoScroll = window.setInterval("scroll('next')", 4000);
 
   $("#scroller").hover(
