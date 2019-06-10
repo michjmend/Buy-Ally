@@ -1,15 +1,102 @@
-<div class="container">
+<header class="fixed-top">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <!-- sidebar menu -->
+            <div class="row">
+                    <div id="mySidebar" class="sidebar">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="container">
+                            <div class="row">
+                                <a href="/postBlock"><i class="fas fa-file-import fa-2x"></i></a>
+                                <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a>
+                            </div>
+                            <h3><i class="fas fa-tasks text-white"></i> Filter it up!</h3>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main">
+                        <button class="openbtn" onclick="openNav()">&#9776;</button>
+                    </div>
+
+                {{!-- logo and app icon --}}
+
+                    <a class="navbar-brand" href="/">
+                        <img id="buyAllybrand" class="ml-auto" src="../img/BuyAllyLogo.png" width="220" height="90">
+                    </a>
+
+            </div>
+    </nav>
+</header>
+
+<div id="signupcontent"   class="container card">
   <div class="row">
     <div class="col-md-12 col-md-offset-3">
-      <a href="/">
-        <h2 class="h2 mb-4 text-center">Register</h2>
-      </a>
+        <h2 class="h2 mb-4 text-center"><i class="fas fa-user-plus"></i> Create a New Account</h2>
       <form class="signup">
         <div class="row">
           <div class="col-md-12">
             <div class="md-form mb-0">
               <input type="text" id="username" name="username" class="form-control">
-              <label for="username" class="">Username</label>
+              <label for="username" class=""><i class="far fa-envelope"></i> Username</label>
             </div>
           </div>
           <div class="col-md-12">
@@ -18,7 +105,7 @@
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                 required>
-              <label for="password" class="">Passowrd</label>
+              <label for="password" class=""><i class="fas fa-lock"></i> Passowrd</label>
             </div>
           </div>
           <div style="display: none" id="alert" class="alert alert-danger" role="alert">
@@ -26,18 +113,36 @@
             <span class="sr-only">Error:</span> <span class="msg"></span>
           </div>
         </div>
-        <button class="btn btn-info btn-block my-4" type="submit">Sign Up</button>
+        <button id="signupbtn" class="btn btn-block my-4" type="submit">Sign Up <i class="fas fa-sign-in-alt"></i></button>
       </form>
 
-      <p>Or Log in <a href="/login">here</a></p>
+      <p>Already have an accout? Login <a href="/login">here</a></p>
 
       <div id="message">
-        <h3>Password must contain the following:</h3>
-        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-        <p id="number" class="invalid">A <b>number</b></p>
-        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        <h4 class="text-center"><u>Password must contain the following:</u></h4>
+        <ul>
+        <li id="letter" class="invalid">A <b>lowercase</b> letter</li>
+        <li id="capital" class="invalid">A <b>capital (uppercase)</b> letter</li>
+        <li id="number" class="invalid">A <b>number</b></li>
+        <li id="length" class="invalid">Minimum <b>8 characters</b></li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
+
+
+    {{!-- javascript --}}
+    <script>
+        /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>

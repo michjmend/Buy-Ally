@@ -1,28 +1,130 @@
-<div class="container">
+<header class="fixed-top">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <!-- sidebar menu -->
+            <div class="row">
+                    <div id="mySidebar" class="sidebar">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="container">
+                            <div class="row">
+                                <a href="/postBlock"><i class="fas fa-file-import fa-2x"></i></a>
+                                <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a>
+                            </div>
+                            <h3><i class="fas fa-tasks text-white"></i> Filter it up!</h3>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                            <div class="form-check">
+
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main">
+                        <button class="openbtn" onclick="openNav()">&#9776;</button>
+                    </div>
+
+                {{!-- logo and app icon --}}
+
+                    <a class="navbar-brand" href="/">
+                        <img id="buyAllybrand" class="ml-auto" src="../img/BuyAllyLogo.png" width="220" height="90">
+                    </a>
+
+            </div>
+    </nav>
+</header>
+
+<div id="logincontent" class="container card">
     <div class="row">
         <div class="col-md-12 col-md-offset-3">
-            <a href="/">
-                <h2 class="h2 mb-4 text-center">Login</h2>
-            </a>
-
+            <h4 class="h2 mb-4 text-center"><i class="fas fa-user"></i> Login</h4>
             <form class="login">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="md-form mb-0">
                             <input type="text" id="username" name="username" class="form-control">
-                            <label for="username" class="">Username</label>
+                            <label for="username" class=""><i class="far fa-envelope"></i> Username</label>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="md-form mb-0">
                             <input type="password" id="password" name="password" class="form-control">
-                            <label for="password" class="">Passowrd</label>
+                            <label for="password" class=""><i class="fas fa-lock"></i> Passowrd</label>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+                <button id="signinbtn" class="btn btn-block my-4" type="submit">Sign in <i class="fas fa-sign-in-alt"></i></button>
             </form>
-            <p>Or sign up <a href="/signup">here</a></p>
+            <p>Don't have an account? Sign up <a href="/signup">here</a></p>
         </div>
     </div>
 </div>
+
+
+{{!-- javascript --}}
+<script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>

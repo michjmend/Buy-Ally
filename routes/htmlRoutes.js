@@ -32,6 +32,11 @@ module.exports = app => {
     res.render("index");
   });
 
+  // postBlock route for post page
+  app.get("/postblock", (req, res) => {
+    res.render("postblock");
+  });
+
   // Find all ORM to select all Posts from our DB;
   // ========================================
   app.get("/", (req, res) => {
@@ -41,15 +46,15 @@ module.exports = app => {
       let recentPosts = dbPosts.slice(-5);
       console.log("Successfully retrieved data from database");
       for (let i = 0; i < recentPosts.length; i++) {
-        jsonPosts.push(recentPosts[i]);
+        jsonPosts.push(recentPosts[i].dataValues);
       }
       res.render("index", {
         display: true,
-        Posts: recentPosts
+        Posts: jsonPosts
       });
     });
   });
-
+  //should be in apiroutes.js
   app.get("/api/users", (req, res) => {
     console.log("getting all of the users");
     db.User.findAll().then(dbUser => {

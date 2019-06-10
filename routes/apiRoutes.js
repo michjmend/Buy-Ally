@@ -13,14 +13,6 @@ module.exports = app => {
     res.render("accountpage");
   });
 
-  // app.post(
-  //   "/api/login",
-  //   passport.authenticate("local", {
-  //     successRedirect: "/",
-  //     failureRedirect: "/signup"
-  //   })
-  // );
-
   // POST route for creating a new User into our database;
   // ========================================
   app.post("/api/signup", (req, res) => {
@@ -47,8 +39,8 @@ module.exports = app => {
   });
 
   // Get all examples
-  app.get("/api/examples", (req, res) => {
-    db.Example.findAll({}).then(dbExamples => {
+  app.get("/api/posts", (req, res) => {
+    db.Post.findAll({}).then(dbExamples => {
       res.json(dbExamples);
     });
   });
@@ -60,5 +52,10 @@ module.exports = app => {
     });
   });
 
+  app.get("/api/category", function(req, res) {
+    db.Category.findAll({}).then(function(dbcategory) {
+      res.json(dbcategory);
+    });
+  });
   // Delete an example by id
 };
