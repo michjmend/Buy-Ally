@@ -1,0 +1,27 @@
+{{!-- Set navbar at top of view --}}
+<div class="home">
+
+	{{> navbar}}
+
+</div>
+
+<div class="single-view">
+	<div class="card" style="width: 500px">
+		<div class="card-title">
+			<h3 class="font-weight-bold"><i class="fas fa-user"></i>{{Posts.name}}</h3>
+		{{!-- TODO - Menu for delete, make private --}}
+		</div>
+		<div class="card-img-body">
+			<a href="{{Posts.url}}"><img class="slide-image" src="{{Posts.picture}}"/>
+		</div>
+		<div class="card-body">
+			<p class="post-text title">Brand</p>
+			<p class="post-text description">{{Posts.brand}}</p>
+			<p class="post-text title">Review</p>
+			<p class="post-text description">{{Posts.review}}</p>
+			<p class="post-text title">Price</p>
+			<p class="post-text description">${{Posts.price}}</p><hr>
+			<p class="post-text title text-center">Check out this item in the store!</p>
+		</div>
+	</div>
+</div>

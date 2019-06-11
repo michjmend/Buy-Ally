@@ -1,39 +1,38 @@
 <div class="home">
 
-	{{> navbar}}
+  {{> navbar}}
 
 </div>
 
 <div class="container card" id="content">
-  <h3 class="card-title">Add a POST</h3>
+  <h3 class="card-title text-center font-weight-bold">Set up your account and let the savings begin!</h3>
 
   <form class="create-update-form" action="/" method="POST">
     <div class="form-group">
-      {{!-- item name --}}
+      {{!-- username --}}
       <div class="form-group row">
-        <label for="dab" class="col-sm-2 col-form-label">Item Description:</label>
+        <label for="dab" class="col-sm-2 col-form-label">Username</label>
         <div class="col-sm-10">
-          <input id="dab" name="name" type="text" class="form-control"
-            placeholder="What kind of item are you reviewing about?">
+          <input id="dab" name="name" type="text" class="form-control" placeholder="shows in your posts and activity">
         </div>
       </div>
-      {{!-- review post --}}
+      {{!-- full name --}}
       <div class="form-group row">
-        <label for="dab1" class="col-sm-2 col-form-label">Review:</label>
+        <label for="dab1" class="col-sm-2 col-form-label">Full Name:</label>
+        <div class="col-sm-10">
+          <input id="dab1" name="name" type="text" class="form-control" placeholder="not shown publicly"></input>
+        </div>
+      </div>
+      {{!-- user bio --}}
+      <div class="form-group row">
+        <label for="dab1" class="col-sm-2 col-form-label">A little bit about yourself:</label>
         <div class="col-sm-10">
           <textarea class="form-control" id="dab1" rows="3"></textarea>
         </div>
       </div>
-      {{!-- dollar amount spent --}}
-      <div class="form-group row">
-        <label for="dab2" class="col-sm-2 col-form-label">Price:</label>
-        <div class="col-sm-10">
-          <input id="dab2" name="name" type="text" class="form-control" placeholder="$$$">
-        </div>
-      </div>
       {{!-- upload photo --}}
       <div class="form-group row">
-        <label for="dab3" class="col-sm-2 col-form-label">Photo:</label>
+        <label for="dab3" class="col-sm-2 col-form-label">Profile Picture:</label>
         <div class="col-sm-10">
           <div class="input-group mb-3">
             <div class="custom-file">
@@ -47,16 +46,9 @@
           </div>
         </div>
       </div>
-      {{!-- site in which user bought item --}}
+      {{!-- areas of interest category --}}
       <div class="form-group row">
-        <label for="dab4" class="col-sm-2 col-form-label">URL:</label>
-        <div class="col-sm-10">
-          <input id="dab4" name="url" type="text" class="form-control" placeholder="site">
-        </div>
-      </div>
-      {{!-- department category --}}
-      <div class="form-group row">
-        <label for="dab4" class="col-sm-2 col-form-label">Select Category:</label>
+        <label for="dab4" class="col-sm-2 col-form-label">Select a few areas of interest:</label>
         <div class="col-sm-10">
           <select name="Category" id="departmentCategory" class="form-control input-lg">
             <option value="">Category</option>
@@ -64,7 +56,7 @@
         </div>
       </div>
       {{!-- submit post --}}
-      <button class="btn btn-primary" type="submit">Submit</button> <a href="/">← Back To Home</a>
+      {{!-- <button class="btn btn-primary" type="submit">Submit</button> <a href="/">← Back To Home</a> --}}
     </div>
 </div>
 </form>
