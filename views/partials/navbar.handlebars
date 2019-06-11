@@ -73,23 +73,25 @@
         </div>
       </div>
 
-      {{!-- Hamburger button --}}
+       {{!-- Hamburger button --}}
       <div id="main">
         <button class="openbtn" onclick="openNav()">&#9776;</button>
       </div>
       {{!-- logo and app icon --}}
       <a class="navbar-brand" href="/">
-        <img id="buyAllybrand" src="../img/BuyAllyLogo.png" width="220" height="90">
+        <img id="buyAllybrand" src="../img/BuyAllywithcaption.png">
+      </a>
+       <a class="navbar-tag" href="/">
+        <img id="buyAllytag" src="../img/BuyAlly2.png">
       </a>
       {{!-- search bar --}}
       <form>
-        <div class="form-group search">
+        <div class="form-inline -search">
           <label for="formGroupExampleInput"></label>
           <input type="text" class="form-control" id="search" placeholder="Search">
-        </div>
       </form>
+
       {{!-- animation --}}
-      <div>
         <button class="btn-6"><span>
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 192 192" style=" fill:#000000;">
               <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -108,6 +110,7 @@
             </svg>
           </span></button>
       </div>
+      <div id="coupon"><p>Use Buy Ally to post a review and win a coupon!</p></div>
       {{!-- register --}}
       <form class="form-inline">
         <section class="color-9">
