@@ -48,7 +48,8 @@ p {
   background-color:#f08863;
   color: white;
   padding: 10px 15px;
-  border: none;
+  border-radius: 5px;
+  border: 2px solid antiquewhite;
 }
 
 .openbtn:hover {
