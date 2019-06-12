@@ -1,8 +1,6 @@
-{{!-- Accountpage.handlebars is only page rendered after successful login attempt, and k mentioned it will look very similar to the main Home Page.
-Only a few differences like allowing the User to see their Username on the page to let them know they successfully are logged in.
-The Post Button on accountpage.handlebars also, will actually lead to a Create Post page (I am working on) by a `href="/accountpage"` --}}
- {{> navbar}}
-  {{!-- middle content with carousel and post button --}}
+{{> navbar}}
+
+{{!-- middle content with carousel and post button --}}
   <div id="content" class="container">
     <!-- carousel -->
     {{!-- {{#if display}}
@@ -12,7 +10,7 @@ The Post Button on accountpage.handlebars also, will actually lead to a Create P
     {{/if}} --}}
   </div>
 
-  {{!-- post button --}}
+{{!-- post button --}}
   <a class="btn btn-primary" href="/postBlock" role="button">POST</a>
 
   <h3>Examples:</h3>
@@ -25,7 +23,7 @@ The Post Button on accountpage.handlebars also, will actually lead to a Create P
     {{/each}}
   </ul>
 
-  {{!-- footer --}}
+{{!-- footer --}}
   <footer class="navbar navbar-light">
     <div class="text-center">
       <h3>Copyright &copy;</h3>
