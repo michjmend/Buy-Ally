@@ -61,6 +61,7 @@ module.exports = app => {
       res.json(dbUser);
     });
   });
+
   // Create ORM for create new instance of our Post model;
   // ========================================
   // app.post("/api/products", (req, res) => {
