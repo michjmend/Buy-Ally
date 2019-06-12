@@ -1,8 +1,7 @@
 <div id="home">
+{{> navbar }}
 
-  {{> navbar}}
-
-    {{!-- top content with carousel and post button --}}
+{{!-- top content with carousel and post button --}}
     <div id="content" class="container">
       {{#if display}}
       {{> displayBlock}}
@@ -11,38 +10,23 @@
       {{/if}}
     </div>
 
-    {{!-- post button --}}
+{{!-- post button --}}
     {{!-- <div class="post-button-container">
       <a class="btn btn-primary" href="/postblock" role="button">POST</a>
     </div> --}}
 
-    {{!--post button animation--}}
+{{!--post button animation--}}
     <a href="/postblock" class="btn">
         <span class="btn-content">Post<span>
         <span class="icon"><i class="fas fa-file-import fa-2x" aria-hidden="true"></i></span>
     </a>
-</section>
-
 
 </div>
 
+{{!-- footer --}}
+  <footer class="navbar navbar-light fixed-bottom">
+    <div class="text-center">
+      <h3>Copyright &copy;</h3>
+    </div>
+  </footer>
 
-
-
-{{!-- javascript --}}
-<script>
-  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-
-  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  }
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>

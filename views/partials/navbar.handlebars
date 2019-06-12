@@ -1,120 +1,71 @@
-  <header class="fixed-top">
-    <!-- Image and text -->
-    <nav class="navbar">
-      <!-- sidebar menu -->
-      <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="container">
-          <div class="row">
-          <a href="/postBlock"><i class="fas fa-file-import fa-2x"></i></a>
-          <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a>
-        </div>
-          <h3><i class="fas fa-tasks"></i> Filter it up!</h3>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
-          </div>
-          <div class="form-check">
-            <p>
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-            </p>
+<header class="fixed-top">
+  <!-- Image and text -->
+  <nav class="navbar">
+    <!-- sidebar menu -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        {{!-- <div class="row"> --}}
+          <a href="/postBlock"><i class="fas fa-file-import fa-2x"></i> Make a Post</a>
+          {{!-- <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a> --}}
+        {{!-- </div> --}}
+ <div class="container">
+        <h3 class="text-white"><i class="fas fa-tasks"></i> Search By Filter!</h3>
+
+        {{!-- <input type="radio" name="" value=""> --}}
+
+
+        <div class="form-group row">
+          <label for="dab4" class="dropdown-header col-sm-2 col-form-label">Select Category:</label>
+          <div class="col-sm-10">
+            <select name="Category" class="form-control input-lg">
+              <input id="radioFilter">
+            </select>
           </div>
         </div>
+        {{!-- make check box (maybe just 2? or 3 for now) --}}
+        {{!-- each checkbox has a class which is connected to JS(on click listener) --}}
       </div>
-
-       {{!-- Hamburger button --}}
-      <div id="main">
-        <button class="openbtn" onclick="openNav()">&#9776;</button>
+    </div>
+    {{!-- Hamburger button --}}
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776;</button>
+    </div>
+    {{!-- logo and app icon --}}
+    <a class="navbar-brand" href="/">
+      <img id="buyAllybrand" src="../img/BuyAllyLogo.png" width="220" height="90">
+    </a>
+    {{!-- search bar --}}
+    <form>
+      <div class="form-group search">
+        <label for="formGroupExampleInput"></label>
+        <input type="text" class="form-control" id="search" placeholder="Search">
       </div>
-      {{!-- logo and app icon --}}
-      <a class="navbar-brand" href="/">
-        <img id="buyAllybrand" src="../img/BuyAllywithcaption.png">
-      </a>
-       <a class="navbar-tag" href="/">
-        <img id="buyAllytag" src="../img/BuyAlly2.png">
-      </a>
-      {{!-- search bar --}}
-      <form>
-        <div class="form-inline -search">
-          <label for="formGroupExampleInput"></label>
-          <input type="text" class="form-control" id="search" placeholder="Search">
-      </form>
-
-      {{!-- animation --}}
-        <button class="btn-6"><span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 192 192" style=" fill:#000000;">
-              <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                style="mix-blend-mode: normal">
-                <path d="M0,192v-192h192v192z" fill="none"></path>
-                <g fill="#ffffff">
-                  <g id="surface1">
-                    <path
-                      d="M73.84615,1.38462c-40.03846,0 -72.46154,32.42308 -72.46154,72.46154c0,40.03846 32.42308,72.46154 72.46154,72.46154c16.90385,0 32.45192,-5.97116 44.76923,-15.69231l6.46154,6.46154c-2.71153,5.10577 -1.75961,11.625 2.53846,15.92308l33.92308,34.15385c5.27885,5.27885 13.875,5.27885 19.15385,0l6.46154,-6.46154c5.27885,-5.27885 5.27885,-13.875 0,-19.15385l-34.15385,-33.92308c-4.32692,-4.32692 -10.81731,-5.07692 -15.92308,-2.30769l-6.46154,-6.46154c9.77885,-12.34615 15.69231,-28.00962 15.69231,-45c0,-40.03846 -32.42308,-72.46154 -72.46154,-72.46154zM73.84615,14.76923c32.625,0 59.07692,26.45192 59.07692,59.07692c0,32.625 -26.45192,59.07692 -59.07692,59.07692c-32.625,0 -59.07692,-26.45192 -59.07692,-59.07692c0,-32.625 26.45192,-59.07692 59.07692,-59.07692zM36.46154,55.15385c-3.80769,6.17308 -6,13.44231 -6,21.23077c0,22.35577 18.02884,40.38462 40.38462,40.38462c8.625,0 16.73077,-2.79808 23.30769,-7.38462c-1.75961,0.20192 -3.72115,0.23077 -5.53846,0.23077c-28.90384,0 -52.15385,-23.25 -52.15385,-52.15385c0,-0.77885 -0.02884,-1.52884 0,-2.30769z">
-                    </path>
-                  </g>
+    </form>
+    {{!-- animation --}}
+    <div>
+      <button class="btn-6"><span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 192 192" style=" fill:#000000;">
+            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+              font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+              <path d="M0,192v-192h192v192z" fill="none"></path>
+              <g fill="#ffffff">
+                <g id="surface1">
+                  <path
+                    d="M73.84615,1.38462c-40.03846,0 -72.46154,32.42308 -72.46154,72.46154c0,40.03846 32.42308,72.46154 72.46154,72.46154c16.90385,0 32.45192,-5.97116 44.76923,-15.69231l6.46154,6.46154c-2.71153,5.10577 -1.75961,11.625 2.53846,15.92308l33.92308,34.15385c5.27885,5.27885 13.875,5.27885 19.15385,0l6.46154,-6.46154c5.27885,-5.27885 5.27885,-13.875 0,-19.15385l-34.15385,-33.92308c-4.32692,-4.32692 -10.81731,-5.07692 -15.92308,-2.30769l-6.46154,-6.46154c9.77885,-12.34615 15.69231,-28.00962 15.69231,-45c0,-40.03846 -32.42308,-72.46154 -72.46154,-72.46154zM73.84615,14.76923c32.625,0 59.07692,26.45192 59.07692,59.07692c0,32.625 -26.45192,59.07692 -59.07692,59.07692c-32.625,0 -59.07692,-26.45192 -59.07692,-59.07692c0,-32.625 26.45192,-59.07692 59.07692,-59.07692zM36.46154,55.15385c-3.80769,6.17308 -6,13.44231 -6,21.23077c0,22.35577 18.02884,40.38462 40.38462,40.38462c8.625,0 16.73077,-2.79808 23.30769,-7.38462c-1.75961,0.20192 -3.72115,0.23077 -5.53846,0.23077c-28.90384,0 -52.15385,-23.25 -52.15385,-52.15385c0,-0.77885 -0.02884,-1.52884 0,-2.30769z">
+                  </path>
                 </g>
               </g>
-            </svg>
-          </span></button>
-      </div>
+            </g>
+          </svg>
+        </span></button>
+    </div>
+    {{!-- register --}}       
       <div id="coupon"><p>Use Buy Ally to post a review and win a coupon!</p></div>
       {{!-- if user --}}
       {{!-- User info partial --}}
       {{!-- else --}}
       {{> register}}
-
     </nav>
   </header>

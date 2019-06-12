@@ -56,10 +56,10 @@
       </div>
       {{!-- department category --}}
       <div class="form-group row">
-        <label for="dab4" class="col-sm-2 col-form-label">Select Category:</label>
+        <label for="dab4" class="dropdown-header col-sm-2 col-form-label">Select Category:</label>
         <div class="col-sm-10">
           <select name="Category" id="departmentCategory" class="form-control input-lg">
-            <option value="">Category</option>
+            <option value="" class="dropdown-header">Category</option>
           </select>
         </div>
       </div>
@@ -68,44 +68,3 @@
     </div>
 </div>
 </form>
-
-
-
-<script>
-  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-
-  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  }
-
-
-    $(document).ready(function () {
-    $.get("/api/category", function(dbcategory){
-       console.log(dbcategory);
-       var options = "<option value=''>Category</option>";
-
-      dbcategory.forEach(function(option){
-        options += "<option data-id='"+ option.id +"' value='"+ option.id +"'>" + option.categoryname + "</option>";
-      })
-    $("#departmentCategory").html(options)
-   })
-
-    function load_json_data(id) {
-      var filter = '';
-      $.getJSON(Category.json, function (data) {
-        filter += '<option value="">Select ' + id + '</option>';
-        $.each(data, function (key, value) {
-          filter += '<option value="">Select ' + id + '> ' + value.categoryname + '</option>';
-        });
-        $('#Category').html(filter);
-
-      });
-    }
-  });
-</script>
