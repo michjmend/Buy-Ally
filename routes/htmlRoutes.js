@@ -32,9 +32,18 @@ module.exports = app => {
     res.render("index");
   });
 
+  app.get("/single", (req, res) => {
+    res.render("single");
+  });
+
   // postBlock route for post page
   app.get("/postblock", (req, res) => {
     res.render("postblock");
+  });
+
+  // account setup
+  app.get("/accountsetup", (req, res) => {
+    res.render("accountSetup");
   });
 
   // Find all ORM to select all Posts from our DB;
@@ -54,7 +63,7 @@ module.exports = app => {
       });
     });
   });
-//should be in apiroutes.js
+  //should be in apiroutes.js
   app.get("/api/users", (req, res) => {
     console.log("getting all of the users");
     db.User.findAll().then(dbUser => {
@@ -62,6 +71,19 @@ module.exports = app => {
     });
   });
 
+  app.get("/single/:id", (req, res) => {
+    Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbPosts => {
+      let thisPost = dbPosts.dataValues;
+      console.log(thisPost);
+      res.render("single", {
+        Posts: thisPost
+      });
+    });
+  });
 
   // Create ORM for create new instance of our Post model;
   // ========================================
