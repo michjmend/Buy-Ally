@@ -310,9 +310,34 @@ button:hover span::before, button:hover span::after{
 }
 
 /* ANDREW'S ADDITIONS AND CHANGES */
+.card-title {
+  padding-left: 15px;
+  padding-bottom: -10px;
+  padding-top: 10px;
+}
 .post-button-container {
   margin-top: 370px;
   text-align: center;
+}
+.post-text {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-weight: bolder;
+}
+.single-view {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 140px;
+}
+.title {
+  font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 0;
+}
+.description {
+  font-size: 18px;
+  line-height: 18px;
+  margin-left: 5px;
 }
 #buyAllytag{
   display:none;
