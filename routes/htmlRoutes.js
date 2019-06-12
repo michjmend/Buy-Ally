@@ -70,7 +70,6 @@ module.exports = app => {
       res.json(dbUser);
     });
   });
-
   app.get("/single/:id", (req, res) => {
     Post.findOne({
       where: {
@@ -84,7 +83,6 @@ module.exports = app => {
       });
     });
   });
-
   // Create ORM for create new instance of our Post model;
   // ========================================
   // app.post("/api/products", (req, res) => {
