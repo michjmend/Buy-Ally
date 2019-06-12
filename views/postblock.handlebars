@@ -7,37 +7,37 @@
 <div class="container card" id="content">
   <h3 class="card-title">Add a POST</h3>
 
-  <form class="create-update-form" action="/" method="POST">
-    <div class="form-group">
+  <form class="create-update-form" id="newPost" enctype="multipart/form-data">
+    {{!-- <div class="form-group"> --}}
       {{!-- item name --}}
       <div class="form-group row">
         <label for="dab" class="col-sm-2 col-form-label">Item Description:</label>
         <div class="col-sm-10">
-          <input id="dab" name="name" type="text" class="form-control"
+          <input id="item" name="name" type="text" class="form-control"
             placeholder="What kind of item are you reviewing about?">
         </div>
       </div>
       {{!-- review post --}}
       <div class="form-group row">
-        <label for="dab1" class="col-sm-2 col-form-label">Review:</label>
+        <label for="reviews" class="col-sm-2 col-form-label">Review:</label>
         <div class="col-sm-10">
-          <textarea class="form-control" id="dab1" rows="3"></textarea>
+          <textarea class="form-control" name="review" id="reviews" rows="3"></textarea>
         </div>
       </div>
       {{!-- dollar amount spent --}}
       <div class="form-group row">
-        <label for="dab2" class="col-sm-2 col-form-label">Price:</label>
+        <label for="price" class="col-sm-2 col-form-label">Price:</label>
         <div class="col-sm-10">
-          <input id="dab2" name="name" type="text" class="form-control" placeholder="$$$">
+          <input id="price" name="price" type="text" class="form-control" placeholder="$$$">
         </div>
       </div>
       {{!-- upload photo --}}
-      <div class="form-group row">
+      {{!-- <div class="form-group row">
         <label for="dab3" class="col-sm-2 col-form-label">Photo:</label>
         <div class="col-sm-10">
           <div class="input-group mb-3">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile02">
+              <input type="file" name="productImage" class="custom-file-input inputGroupFile02" id="uploadFile">
               <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose
                 file</label>
             </div>
@@ -46,17 +46,28 @@
             </div>
           </div>
         </div>
+      </div> --}}
+      <div class="row">
+        <label for="brand" class="col-sm-2 col-form-label">Brand:</label>
+        <input type="file" name="productImage">
+      </div>
+      {{!-- brand of bought item --}}
+      <div class="form-group row">
+        <label for="brand" class="col-sm-2 col-form-label">Brand:</label>
+        <div class="col-sm-10">
+          <input id="brand" name="brand" type="text" class="form-control" placeholder="site">
+        </div>
       </div>
       {{!-- site in which user bought item --}}
       <div class="form-group row">
-        <label for="dab4" class="col-sm-2 col-form-label">URL:</label>
+        <label for="url" class="col-sm-2 col-form-label">URL:</label>
         <div class="col-sm-10">
-          <input id="dab4" name="url" type="text" class="form-control" placeholder="site">
+          <input id="url" name="url" type="url" class="form-control" placeholder="site">
         </div>
       </div>
       {{!-- department category --}}
       <div class="form-group row">
-        <label for="dab4" class="dropdown-header col-sm-2 col-form-label">Select Category:</label>
+        <label for="departmentCategory" class="col-sm-2 col-form-label">Select Category:</label>
         <div class="col-sm-10">
           <select name="Category" id="departmentCategory" class="form-control input-lg">
             <option value="" class="dropdown-header">Category</option>
@@ -65,6 +76,31 @@
       </div>
       {{!-- submit post --}}
       <button class="btn btn-primary" type="submit">Submit</button> <a href="/">← Back To Home</a>
-    </div>
+    {{!-- </div> --}}
+  </form>
 </div>
-</form>
+<script>
+  $(document).ready(function () {
+    $.get("/api/category", function (dbcategory) {
+      console.log("this is the info sent back from the backend", dbcategory);
+      var options = "<option value=''>Category</option>";
+
+      dbcategory.forEach(function (option) {
+        options += "<option data-id='" + option.id + "' value='" + option.id + "'>" + option.categoryname + "</option>";
+      })
+      $("#departmentCategory").html(options)
+    })
+
+    function load_json_data(id) {
+      var filter = '';
+      $.getJSON(Category.json, function (data) {
+        filter += '<option value="">Select ' + id + '</option>';
+        $.each(data, function (key, value) {
+          filter += '<option value="">Select ' + id + '> ' + value.categoryname + '</option>';
+        });
+        $('#Category').html(filter);
+
+      });
+    }
+  });
+</script>
