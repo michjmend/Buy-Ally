@@ -5,7 +5,7 @@
 </div>
 
 <div class="container card" id="content">
-  <h3 class="card-title text-center font-weight-bold">Set up your account and let the savings begin!</h3>
+  <h3 class="card-title text-center font-weight-bold">Account Management Page</h3>
 
   <form class="create-update-form" action="/" method="POST">
     <div class="form-group">
@@ -31,19 +31,10 @@
         </div>
       </div>
       {{!-- upload photo --}}
-      <div class="form-group row">
-        <label for="dab3" class="col-sm-2 col-form-label">Profile Picture:</label>
+     <div class="row">
+        <label for="photo" class="col-sm-2 col-form-label">Picture:</label>
         <div class="col-sm-10">
-          <div class="input-group mb-3">
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile02">
-              <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose
-                file</label>
-            </div>
-            <div class="input-group-append">
-              <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-            </div>
-          </div>
+          <input type="file" name="productImage">
         </div>
       </div>
       {{!-- areas of interest category --}}
@@ -56,48 +47,11 @@
         </div>
       </div>
       {{!-- submit post --}}
-      {{!-- <button class="btn btn-primary" type="submit">Submit</button> <a href="/">← Back To Home</a> --}}
+      <button class="button-submit btn-primary" type="submit" id="account-info">Submit</button>
+      <a href="/">Return To Home</a>
+      <button class="button-submit btn-danger" id="delete-account">Delete my account</button>
     </div>
 </div>
 </form>
 
-
-
-<script>
-  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-
-  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  }
-
-
-    $(document).ready(function () {
-    $.get("/api/category", function(dbcategory){
-       console.log(dbcategory);
-       var options = "<option value=''>Category</option>";
-
-      dbcategory.forEach(function(option){
-        options += "<option data-id='"+ option.id +"' value='"+ option.id +"'>" + option.categoryname + "</option>";
-      })
-    $("#departmentCategory").html(options)
-   })
-
-    function load_json_data(id) {
-      var filter = '';
-      $.getJSON(Category.json, function (data) {
-        filter += '<option value="">Select ' + id + '</option>';
-        $.each(data, function (key, value) {
-          filter += '<option value="">Select ' + id + '> ' + value.categoryname + '</option>';
-        });
-        $('#Category').html(filter);
-
-      });
-    }
-  });
-</script>
+<script type="text/javascript" src="/js/accountSetup.js"></script>

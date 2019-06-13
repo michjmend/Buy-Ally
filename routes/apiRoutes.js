@@ -5,6 +5,7 @@ var passport = require("../config/passport");
 var multer = require("multer");
 var upload = multer({ dest: "uploads/" });
 
+// eslint-disable-next-line no-unused-vars
 const { User, Post } = db;
 
 module.exports = app => {
@@ -15,8 +16,8 @@ module.exports = app => {
   });
 
   app.get("/accountpage", (req, res) => {
-    let currentUser = req.user.id
-    console.log("user id is ", currentUser)
+    // let currentUser = req.user.id
+    // console.log("user id is ", currentUser)
     // Posts.findAll({
     //   where: {
     //     id: currentUser
@@ -66,12 +67,8 @@ module.exports = app => {
   // Create a new example
   // will only try to parse one file with "single";
   app.post("/api/product", upload.single("productImage"), (req, res) => {
-    console.log(req.file);
-    console.log(req.body);
-    console.log(req.body.name);
-    console.log("this is the review", req.body.review);
     res.status(200).json("/postblock");
-    Post.create({
+    db.Post.create({
       name: req.body.name,
       review: req.body.review,
       picture: req.file.path,
@@ -79,8 +76,29 @@ module.exports = app => {
       brand: req.body.brand,
       url: req.body.url,
       CategoryId: req.body.Category,
-      UserId: 1
+      UserId: req.user.id
     }).then(function() {
+      res.status(200);
+    });
+  });
+  app.delete("/accountdelete", (req, res) => {
+    console.log("deleting user");
+    let deletedUser = req.user;
+    User.destroy({
+      where: {
+        id: deletedUser.id
+      }
+    }).then(() => {
+      res.end();
+    });
+  });
+  app.put("/api/update", (req, res) => {
+    console.log("foof");
+    res.status(200).json("/accountSetup");
+    db.User.update(
+      { name: req.body.name },
+      { returning: true, where: { id: req.user.id } }
+    ).then(function() {
       res.status(200);
     });
   });

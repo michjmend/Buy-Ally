@@ -1,50 +1,67 @@
-/*Mich post block code originally postBlock.js */
-$(document).ready(function () {
-  $.get("/api/category", function (dbcategory) {
-    console.log(dbcategory);
-    var options = "<option value=''>Category</option>";
+/* eslint-disable no-unused-vars */
+/* Get categories for post block */
+var checkedUser = [];
 
-    dbcategory.forEach(function (option) {
-      options += "<option data-id='" + option.id + "' value='" + option.id + "'>" + option.categoryname + "</option>";
-    });
-    $("#departmentCategory").html(options)
-
+$(document).ready(() => {
+  $.ajax({
+    url: "api/usercheck",
+    success: result => {
+      console.log("Successfully Hit User Route");
+      checkedUser = result;
+      if (!checkedUser) {
+        window.location.replace("/login");
+      }
+    }
   });
-
-  function load_json_data(id) {
-    var filter = '';
-    $.getJSON(Category.json, function (data) {
-      filter += '<option value="">Select ' + id + '</option>';
-      $.each(data, function (key, value) {
-        filter += '<option value="">Select ' + id + '> ' + value.categoryname + '</option>';
-      });
-      $('#Category').html(filter);
-
-    });
-  }
 });
 
-/*Mike's post block code originally postblock.js*/
-$(document).ready(function () {
-  $.get("/api/category", function (dbcategory) {
+$(document).ready(function() {
+  $.get("/api/category", function(dbcategory) {
     console.log(dbcategory);
     var options = "<option value=''>Category</option>";
 
-    dbcategory.forEach(function (option) {
-      options += "<option data-id='" + option.id + "' value='" + option.id + "'>" + option.categoryname + "</option>";
+    dbcategory.forEach(function(option) {
+      options +=
+        "<option data-id='" +
+        option.id +
+        "' value='" +
+        option.id +
+        "'>" +
+        option.categoryname +
+        "</option>";
     });
-    $("#departmentCategory").html(options)
+    $("#departmentCategory").html(options);
   });
+  // eslint-disable-next-line camelcase
+});
+$(document).ready(function() {
+  var postbutton = $("#formSubmit");
+  var itemInput = $("#item");
+  var reviewInput = $("#reviews");
+  var priceInput = $("#price");
+  var imageInput = $("#uploadFile");
+  var brandInput = $("#brand");
+  var urlInput = $("#url");
+  var categoryInput = $("select#departmentCategory");
 
-  function load_json_data(id) {
-    var filter = '';
-    $.getJSON(Category.json, function (data) {
-      filter += '<option value="">Select ' + id + '</option>';
-      $.each(data, function (key, value) {
-        filter += '<option value="">Select ' + id + '> ' + value.categoryname + '</option>';
-      });
-      $('#Category').html(filter);
-
+  $("#newPost").submit(function(e) {
+    // alert("Err");
+    e.preventDefault();
+    var formData = new FormData(this);
+    console.log(formData);
+    $.ajax({
+      type: "POST",
+      url: "/api/product",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function(r) {
+        window.location.replace(r);
+      },
+      error: function(e) {
+        console.log("some error", e);
+      }
     });
-  }
+    return false;
+  });
 });

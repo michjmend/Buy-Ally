@@ -400,13 +400,16 @@ button:hover span::before, button:hover span::after{
 }
 
 /* ANDREW'S ADDITIONS AND CHANGES */
+.submit-button {
+  margin-top: 20px;
+}
 .card-title {
   padding-left: 15px;
   padding-bottom: -10px;
   padding-top: 10px;
 }
 .post-button-container {
-  margin-top: 370px;
+  margin-top: 150px;
   text-align: center;
 }
 .post-text {
