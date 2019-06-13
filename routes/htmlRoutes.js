@@ -47,6 +47,11 @@ module.exports = app => {
     res.render("accountSetup");
   });
 
+  //sidebarpage with about and contact
+  app.get("/sidebarpage", (req, res) => {
+    res.render("sidebarpage");
+  });
+
   // Find all ORM to select all Posts from our DB;
   // ========================================
   app.get("/", (req, res) => {

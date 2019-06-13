@@ -1,6 +1,34 @@
-p {
-  color: white;
-  font-family: 'Lato', Arial, sans-serif;
+#aboutTop {
+  margin-top: 150px;
+}
+
+.aboutUs, .contact, .authors {
+  margin: 25px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  margin-top: 20px;
+}
+
+#searchFilter {
+  margin-top: 30px;
+}
+
+#sidebarpage {
+  font-size: 15px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+#list {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
 }
 
 /* The sidebar menu */
