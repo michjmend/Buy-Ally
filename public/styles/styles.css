@@ -1,6 +1,6 @@
 #backgroundImage img {
   padding-top:110px;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   bottom:0;
@@ -436,12 +436,13 @@ button:hover span::before, button:hover span::after{
 @media screen and (max-width: 1225px) {
   #search {
    top:0;
-   width:200px;
+   width:50px;
    left:115px;
   }
   #buyAllybrand{
  display:none;
   }
+
   #buyAllytag{
     display:block;
     position:fixed;
@@ -449,6 +450,18 @@ button:hover span::before, button:hover span::after{
     top:10px;
     width:60px;
     height:70px;
+  }
+
+  #backgroundImage img{
+    height:auto;
+  }
+}
+
+@media screen and (max-width:951px){
+  .form-inline {
+    width:100px;
+    left:115px;
+    
   }
 }
 
