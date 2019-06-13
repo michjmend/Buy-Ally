@@ -1,4 +1,3 @@
-
 var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
 // var Sequelize = require("sequelize");
@@ -72,6 +71,7 @@ module.exports = app => {
     });
   });
   app.get("/single/:id", (req, res) => {
+    console.log(req.params.id);
     Post.findOne({
       where: {
         id: req.params.id
@@ -84,6 +84,7 @@ module.exports = app => {
       });
     });
   });
+
   // Create ORM for create new instance of our Post model;
   // ========================================
   // app.post("/api/products", (req, res) => {
