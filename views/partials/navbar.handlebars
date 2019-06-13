@@ -9,21 +9,27 @@
           <a href="/postBlock"><i class="fas fa-file-import fa-2x"></i> Make a Post</a>
           {{!-- <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a> --}}
         {{!-- </div> --}}
- <div class="container">
-        <h3 class="text-white"><i class="fas fa-tasks"></i> Search By Filter!</h3>
+  <div class="container">
+    <h3 class="text-white"><i class="fas fa-tasks"></i> Search By Filter!</h3>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pick one or more filters</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <form>
+          <div id="radioFilter"></div><br>
+          <input id="thisSubmit" type="submit" value="">
+        </form>
+      </div>
+    </div>
 
-        {{!-- <input type="radio" name="" value=""> --}}
-
-
-        <div class="form-group row">
+        {{!-- <div class="form-group row">
           <label for="dab4" class="dropdown-header col-sm-2 col-form-label">Select Category:</label>
           <div class="col-sm-10">
             <select name="Category" class="form-control input-lg">
-              <input id="radioFilter">
+              <div id="radioFilter"></select>
             </select>
           </div>
         </div>
-        {{!-- make check box (maybe just 2? or 3 for now) --}}
+        make check box (maybe just 2? or 3 for now) --}}
         {{!-- each checkbox has a class which is connected to JS(on click listener) --}}
       </div>
     </div>
@@ -61,11 +67,14 @@
           </svg>
         </span></button>
     </div>
-    {{!-- register --}}       
+    {{!-- register --}}
       <div id="coupon"><p>Use Buy Ally to post a review and win a coupon!</p></div>
-      {{!-- if user --}}
-      {{!-- User info partial --}}
-      {{!-- else --}}
-      {{> register}}
+      {{#if showPerson}}
+        <h1>Potato</h1>
+        <h1>{{User.username}}</h1>
+      {{else}}
+        {{> register}}
+      {{/if}}
     </nav>
   </header>
+  <script src="/js/navbar.js"></script>

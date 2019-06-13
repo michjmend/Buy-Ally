@@ -1,15 +1,21 @@
-$(document).ready(function () {
-$.get("/api/category", function (dbcategory) {
-  console.log(dbcategory);
-  var options = "";
-
-  dbcategory.forEach(function (option) {
-    options += 'type="radio" value="' + option.id + '" name="' + option.categoryname + '">';
+$(document).ready(function() {
+  $.get("/api/category", function(dbcategory) {
+    let options = "";
+    dbcategory.forEach(function(option) {
+      options +=
+        "<input class=\"dropdown-item\" type=\"checkbox\" value=\"" +
+        option.id +
+        "\" name=\"" +
+        option.categoryname +
+        "\">" + option.categoryname + "<br>";
+    });
+    $("#radioFilter").html(options);
   });
-  console.log(options)
-  $("#radioFilter").html(options)
 });
-})
+
+$("#thisSubmit").on("click", function(e){
+  console.log(this);
+});
 
 // $("#radioFilter").on("click", function (id) {
 //   console.log('yo doin it')

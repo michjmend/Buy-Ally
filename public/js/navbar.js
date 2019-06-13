@@ -1,3 +1,12 @@
+/* eslint-disable no-unused-vars */
+let checkedUser = "";
 // Check to see if user exists
-
-  // User exists - navbar
+$(document).ready(() => {
+  $.ajax({
+    url: "api/usercheck",
+    success: result => {
+      console.log("Successfully Hit User Route");
+    }
+  });
+});
+// User exists - navbar
