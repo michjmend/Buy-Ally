@@ -15,6 +15,19 @@ module.exports = app => {
   });
 
   app.get("/accountpage", (req, res) => {
+    let currentUser = req.user.id
+    console.log("user id is ", currentUser)
+    // Posts.findAll({
+    //   where: {
+    //     id: currentUser
+    //   }
+    // }).then(dbPosts => {
+    //   let thisPost = dbPosts.dataValues;
+    //   console.log(thisPost);
+    //   res.render("accountpage", {
+    //     Posts: thisPost
+    //   });
+    // });
     res.render("accountpage");
   });
 
@@ -77,5 +90,12 @@ module.exports = app => {
       res.json(dbcategory);
     });
   });
-  // Delete an example by id;
+  // Delete an example by id
+  // Check for user exists
+  app.get("/api/usercheck", (req, res) => {
+    console.log("Usercheck route successful");
+    let checkedUser = req.user;
+    console.log(checkedUser);
+    res.send(checkedUser);
+  });
 };

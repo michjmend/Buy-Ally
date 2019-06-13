@@ -1,3 +1,4 @@
+
 var db = require("../models");
 // For nesting sets of Operator(Op) to generate more complex conditions in the Where object filter;
 // var Sequelize = require("sequelize");
