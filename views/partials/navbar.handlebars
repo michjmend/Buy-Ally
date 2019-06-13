@@ -5,27 +5,46 @@
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-        {{!-- <div class="row"> --}}
-          <a href="/postBlock"><i class="fas fa-file-import fa-2x"></i> Make a Post</a>
-          {{!-- <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a> --}}
-        {{!-- </div> --}}
- <div class="container">
-        <h3 class="text-white"><i class="fas fa-tasks"></i> Search By Filter!</h3>
-
-        {{!-- <input type="radio" name="" value=""> --}}
-
-
+      {{!-- <div class="row"> --}}
+      {{!-- <a href="/searchBlock"><i class="fas fa-search fa-2x"></i></a> --}}
+      {{!-- </div> --}}
+      <div id="searchFilter" class="container">
+        <h3 class="text-white">Search By Filter!</h3>
         <div class="form-group row">
-          <label for="dab4" class="dropdown-header col-sm-2 col-form-label">Select Category:</label>
+          <label for="departmentCategory" class="col-sm-2 col-form-label"><i
+              class="fas fa-tasks fa-2x text-white"></i></label>
           <div class="col-sm-10">
-            <select name="Category" class="form-control input-lg">
-              <input id="radioFilter">
+            <select name="Category" id="departmentCategory" class="form-control input-lg">
+              <option value="" class="dropdown-header">Category</option>
             </select>
           </div>
         </div>
-        {{!-- make check box (maybe just 2? or 3 for now) --}}
-        {{!-- each checkbox has a class which is connected to JS(on click listener) --}}
       </div>
+
+      <div class="container"><a href="/postBlock">Post <i class="fas fa-file-import fa-2x"></i></a></div>
+
+      <div id="sidebarpage" class="card">
+        <h5 class=""><a href="/sidebarpage">Want to learn more? Click here to check out the following! <i
+              class="fas fa-level-down-alt"></i></a></h5>
+      </div>
+      <div id="list" class="card">
+        <ul>
+          <li>
+            About Buy Ally <i class="far fa-address-card"></i>
+          </li>
+          <li>
+            Contact Us <i class="fas fa-user-edit"></i>
+          </li>
+          <li>
+            Authors <i class="fas fa-users-cog"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="../img/BuyAllyLogo.png" width="220" height="auto">
+      </div>
+
     </div>
     {{!-- Hamburger button --}}
     <div id="main">
@@ -61,11 +80,13 @@
           </svg>
         </span></button>
     </div>
-    {{!-- register --}}       
-      <div id="coupon"><p>Use Buy Ally to post a review and win a coupon!</p></div>
-      {{!-- if user --}}
-      {{!-- User info partial --}}
-      {{!-- else --}}
-      {{> register}}
-    </nav>
-  </header>
+    {{!-- register --}}
+    <div id="coupon">
+      <p>Use Buy Ally to post a review and win a coupon!</p>
+    </div>
+    {{!-- if user --}}
+    {{!-- User info partial --}}
+    {{!-- else --}}
+    {{> register}}
+  </nav>
+</header>
