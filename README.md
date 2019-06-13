@@ -1,4 +1,4 @@
-# Buy Alley
+# Buy Ally
 ![Screenshot](./public/img/BuyAllyLogo.png)
 
 ## Overview
