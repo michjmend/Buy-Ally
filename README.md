@@ -2,7 +2,13 @@
 ![Screenshot](./public/img/BuyAllyLogo.png)
 
 ## Overview
-This app uses Node and Express Web Server, is backed by a MySQL Database with a Sequelize ORM.
+Buy Ally allows user to post reviews/Picture/Video and URL about the purchases they have done
+and the items they think other users may like to buy.
+last 5 uploads are always visible on the site. User can use Category filter to see slides of a particular category.
+Posts are allowed only if user has an account with us. That provides an extra layer of security.
+
+## Power Point Presentation
+https://docs.google.com/presentation/d/1r2UtHDPnpRFPflcvSUkL7POaqVAYr-CWHcD1DuF2Bqo/edit#slide=id.g559e7814a1_0_0
 
 ## npm Dependencies
     dotenv
@@ -12,6 +18,7 @@ This app uses Node and Express Web Server, is backed by a MySQL Database with a 
     passport
     chai
     chai-http
+    multer
 
 ## Database
     MySQL
@@ -45,6 +52,7 @@ $ node server.js
 ```
 
 ### Heroku link
+https://codingprojecttwo.herokuapp.com/
 
 
 #### Only for Dev and test environment
@@ -54,10 +62,6 @@ $ node server.js
 
    * Close out of the MySQL command line tool: `exit`.
 
-
-## Logic
-
-_________________________________________________________________________________________________________________________________
 
 # PROJECT WORK FLOW
 
@@ -72,6 +76,11 @@ ________________________________________________________________________________
 * Meet good quality coding standards (indentation, scoping, naming).
 * Must not expose sensitive API key information on the server, see Protecting-API-Keys-In-Node.md
 
+## Why Buy Ally
+* Need to visit multiple sites to look for a perticular style.
+* It is time consuming.
+* giving user a one stop quick shop expirience.
+
 ## Brain storming
   * Who is your target audience?
       All users searching for best product (price, size, fit, option, store)
@@ -82,16 +91,18 @@ ________________________________________________________________________________
       click on the URL to do quick shopping of the liked items.
 
 ## Flowchart
-![Screenshot](./public/img/flowchart.png)
+![Screenshot](./public/img/FlowChartPic.png)
 
 ## ER Diagram
+Used Star Schema for Database design
 ![Screenshot](./public/img/ERdiagram.png)
 
 ## Organize/Prioritize
 Team work is done collaboratively using Trello’s boards, lists and cards.
 Trello was a big help when it comes to organize and prioritize project.
+Project is based on Agile Methodology. We had 2 sprints of 3 days each.
+Each Card represents a User Story.
 ![Screenshot](./public/img/trello.png)
-
 
 ## Contributors
 This project exists thanks to all the people who contribute.
@@ -100,3 +111,4 @@ This project exists thanks to all the people who contribute.
 
 ## License
 [Full Stack Developers @RUTGERS](LICENSE) © Andrew Tirpok/Kristen De La Rosa/Sushmita Yande/Michael Kang/Michelle Mendieta
+
