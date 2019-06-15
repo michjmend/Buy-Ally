@@ -5,7 +5,6 @@ $(document).ready(() => {
   $.ajax({
     url: "api/usercheck",
     success: result => {
-      console.log("Successfully Hit User Route");
       checkedUser = result;
       if (!checkedUser) {
         window.location.replace("/login");
@@ -19,7 +18,6 @@ $(document).ready(() => {
     }
   });
 });
-
 // eslint-disable-next-line no-unused-vars
 $("#delete-account").click(function(e) {
   event.preventDefault();

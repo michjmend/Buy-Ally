@@ -15,25 +15,25 @@ $(document).ready(() => {
   });
 });
 
-$(document).ready(function() {
-  $.get("/api/category", function(dbcategory) {
-    console.log(dbcategory);
-    var options = "<option value=''>Category</option>";
+// $(document).ready(function() {
+//   $.get("/api/category", function(dbcategory) {
+//     var options = "<option value=''>Category</option>";
 
-    dbcategory.forEach(function(option) {
-      options +=
-        "<option data-id='" +
-        option.id +
-        "' value='" +
-        option.id +
-        "'>" +
-        option.categoryname +
-        "</option>";
-    });
-    $("#departmentCategory").html(options);
-  });
-  // eslint-disable-next-line camelcase
-});
+//     dbcategory.forEach(function(option) {
+//       options +=
+//         "<option data-id='" +
+//         option.id +
+//         "' value='" +
+//         option.id +
+//         "'>" +
+//         option.categoryname +
+//         "</option>";
+//     });
+//     console.log("Deez options, yo",options)
+//     $("#departmentCategories").html(options);
+//   });
+// eslint-disable-next-line camelcase
+// });
 $(document).ready(function() {
   var postbutton = $("#formSubmit");
   var itemInput = $("#item");
