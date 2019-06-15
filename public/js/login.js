@@ -29,13 +29,12 @@ $(document).ready(() => {
       password: password
     })
       .then(route => {
-        console.log("testing reload");
         window.location.replace(route);
-        console.log(route);
         // If there's an error, log the error
       })
       .catch(err => {
-        console.log(err);
+        // eslint-disable-next-line prettier/prettier
+        $("#login-error").html('<span><h5 class="text-danger text-center text-inline"><i class="fas fa-exclamation-triangle text-danger"></i>    Something went wrong!</h5></span><h5 class="text-center text-danger">Username or password incorrect</h5><hr>');
       });
   }
 });
